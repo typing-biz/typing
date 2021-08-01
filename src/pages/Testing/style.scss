@@ -1,0 +1,14 @@
+$kyzyl: rgb(223, 192, 192);
+
+.testin-block {
+	background-color: $kyzyl;
+	height: 100vh;
+    padding: 100px;
+	.testing-block__area {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+	}
+}
