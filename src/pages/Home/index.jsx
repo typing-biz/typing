@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.scss'
+import {Link} from 'react-router-dom'
 
 function Home() {
 	return (
@@ -18,8 +19,9 @@ function Home() {
 						<img src='' alt='' />
 					</div>
 					<div className="home__btns">
-						<button className="home__start-btn">Начать печатать</button>
-						<button className="home__rating-btn">Рейтинг</button>
+						<Link to="/testing">	<button className="home__start-btn">Начать печатать</button></Link>
+						<Link to="/rating">	<button className="home__rating-btn">Рейтинг</button></Link>
+					
 					</div>
 				</div>
 			</div>
