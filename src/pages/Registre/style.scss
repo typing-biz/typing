@@ -1,0 +1,47 @@
+.block {
+  display: flex;
+  background-image: url(../../img/img.png);
+  background-repeat: repeat-y;
+  // background-size: cover;
+
+  .block__first {
+    width: 905px;
+    height: 1024px;
+    display: flex;
+    align-items: center;
+
+    .block__img1{
+      margin-bottom: 170px;
+      margin-left: 200px;
+    }
+
+    .block__img2{
+      margin-top: 100px;
+      margin-left: 120px;
+    }
+
+    .block__button {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 322px;
+      height: 78px;
+      display: flex;
+      position: absolute;
+      margin-left: 300px;
+      margin-top: 20px;
+    }
+    .google {
+      width: 48px;
+      height: 48px;
+      margin-top: 13px;
+      padding-left: 30px;
+    }
+  }
+  .block__img {
+    width: 535px;
+    height: 1024px;
+  }
+}

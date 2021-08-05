@@ -6,11 +6,13 @@ import SignUp from '../pages/Login'
 import Profile from '../pages/Profile'
 import Testing from '../pages/Testing'
 import Rating from '../Rating'
+import {Registre} from '../pages/Registre'
 
 function Routes() {
 	return (
 		<>
 			<Switch>
+				<Route path='/registre' component={Registre}/>
 				<Route path='/signUp' component={SignUp} />
 				<Route path='/profile' component={Profile} />
 				<Route path='/testing' component={Testing} />
