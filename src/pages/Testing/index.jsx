@@ -65,7 +65,11 @@ function Testing() {
 		<div className='testin-block'>
 			<h1>{`${minutes}:${seconds}`}</h1>
 			<h1>
-				{textArray.map((el, id) => {
+				{textArray.map((el,id) => {
+					// let color = ''E
+					// if(i < text.length){
+					// 	color = s === text[i] ? 'green' : 'red'
+					// }
 					return (
 						<span
 							style={{
@@ -80,6 +84,7 @@ function Testing() {
 						>
 							{el}
 						</span>
+						// <span key={`$(s)_`} className={color}>{s}</span>
 					)
 				})}
 			</h1>
