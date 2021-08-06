@@ -1,11 +1,17 @@
 .block__first {
   display: flex;
+<<<<<<< HEAD
   align-items: center;
   background-image: url(../../img/img.png);
   background-size: cover;
   background-repeat: no-repeat;
   height: 95vh;
  
+=======
+  background-image: url(../../assets/img/img.png);
+  background-repeat: repeat-y;
+  // background-size: cover;
+>>>>>>> 2f94a928f2df94e3fa27dac5f20f2aa056e13f80
 
 
    .block__container{

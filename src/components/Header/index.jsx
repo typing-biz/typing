@@ -1,11 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './Header.scss'
+
 
 function Header() {
-    return (
-        <div>
-            Header
-        </div>
-    )
+
+	return (
+		<header className='header'>
+			<div className='container'>
+				<Link className='link' to='/'>
+					<div className='header__logo'>MIR Typing</div>
+				</Link>
+
+				<nav>
+					<Link to='/testing'>Тестирование</Link>
+					<Link to='/rating'>Рейтинг</Link>
+				</nav>
+			</div>
+		</header>
+	)
 }
 
 export default Header

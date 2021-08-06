@@ -1,0 +1,42 @@
+.header {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ff9000;
+	// width: 100%;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		font-family: Comfortaa;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 36.4286px;
+		line-height: 41px;
+		color: #ffffff;
+		text-decoration: none;
+		border: none;
+	}
+	.link {
+		text-decoration: none;
+	}
+
+	nav {
+		width: 391px;
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+	}
+	nav a {
+		text-decoration: none;
+		font-family: Comfortaa;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 16px;
+		color: #ffffff;
+	}
+}
