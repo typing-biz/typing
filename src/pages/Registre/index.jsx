@@ -8,18 +8,19 @@ import "./style.scss";
 
 export const Registre = () => {
   return (
-    <div className="block">
-      <div className="block__first">
-      <img src={pic2} className="block__img1"/>
-      <img src={pic3} className="block__img2"/>
+    <div className="block__first">
+    <div className="block__container">
+    <img src={pic2} className="block__img1" />
+        <img src={pic3} className="block__img2" />
         <button className="block__button">
           <img src={pic1} className="google" />
           <span style={{ marginTop: 28, marginLeft: 70 }}>
             Sign In Google
           </span>{" "}
         </button>
-      </div>
-      {/* <img  src={pic} className="block__img"/> */}
     </div>
+      
+      </div>
+  
   );
 };
