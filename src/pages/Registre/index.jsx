@@ -1,9 +1,9 @@
 import { width } from "@material-ui/system";
 import React from "react";
-import pic from "../../img/image 3.png";
-import pic1 from "../../img/Google - Original.png";
-import pic2 from "../../img/Ellipse 2.png";
-import pic3 from "../../img/Rectangle 2.png";
+import pic from "../../assets/img/image 3.png";
+import pic1 from "../../assets/img/Google - Original.png";
+import pic2 from "../../assets/img/Ellipse 2.png";
+import pic3 from "../../assets/img/Rectangle 2.png";
 import "./style.scss";
 
 export const Registre = () => {

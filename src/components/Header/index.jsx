@@ -4,17 +4,17 @@ import './Header.scss'
 
 
 function Header() {
+
 	return (
 		<header className='header'>
 			<div className='container'>
-
-				<Link className="link" to="/">
+				<Link className='link' to='/'>
 					<div className='header__logo'>MIR Typing</div>
 				</Link>
 
 				<nav>
-					<Link to="/testing">Тестирование</Link>
-					<Link to="/rating">Рейтинг</Link>
+					<Link to='/testing'>Тестирование</Link>
+					<Link to='/rating'>Рейтинг</Link>
 				</nav>
 			</div>
 		</header>
