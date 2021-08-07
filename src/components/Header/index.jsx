@@ -50,7 +50,7 @@ function Header() {
 					<img src={user.thumbnail} alt="" />
 					<select className="header__select">
 						<option>
-							{user.fullName.split(' ')[0]}
+							{user.fullName.split('')[0]}
 							</option>
 						<option>О нас</option>
 						<option>Выйти</option>
