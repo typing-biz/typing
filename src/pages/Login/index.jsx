@@ -33,11 +33,19 @@ function SignUp() {
 	}
 
 	return (
-		<>
-			<button style={{ padding: 10, marginTop: 100 }} onClick={authorization }>
-				signup
-			</button>
-		</>
+	
+		
+		// <button style={{ padding: 10, marginTop: 100 }} onClick={authorization}>
+		// 		signup
+		// 	</button> 
+		<div>
+			jasmina
+		</div>
+
+
+		
+		
+		
 	)
 }
 

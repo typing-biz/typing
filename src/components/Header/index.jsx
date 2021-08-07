@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux'
 function Header() {
 
 	const user = useSelector(state => state.authReducer.user)
+	console.log(user)
 
 	const useStyles = makeStyles((theme) => ({
 		formControl: {
@@ -50,7 +51,7 @@ function Header() {
 					<img src={user.thumbnail} alt="" />
 					<select className="header__select">
 						<option>
-							{user.fullName.split('')[0]}
+							{user.fullName}
 							</option>
 						<option>О нас</option>
 						<option>Выйти</option>
