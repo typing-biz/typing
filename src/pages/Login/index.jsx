@@ -2,6 +2,8 @@ import React from 'react'
 import firebase from 'firebase'
 import 'firebase/firestore'
 import 'firebase/auth'
+import { useDispatch } from 'react-redux'
+import { change_token, loginRequest } from '../../store/actions'
 
 firebase.initializeApp({
 	apiKey: 'AIzaSyCah7OnZFSyTqo2TwcTPeIfYlTuj9PEC3Y',
@@ -15,7 +17,9 @@ firebase.initializeApp({
 const auth = firebase.auth()
 
 function SignUp() {
-	const login = async () => {
+	const dispatch = useDispatch()
+
+	const authorization  = async () => {
 		const user = await auth.signInWithPopup(
 			new firebase.auth.GoogleAuthProvider(),
 		)
@@ -23,13 +27,14 @@ function SignUp() {
 			.auth()
 			.currentUser.getIdTokenResult()
 			.then((idTokenResult) => {
-				console.log(idTokenResult.token)
+				dispatch(change_token(idTokenResult.token))
+				dispatch(loginRequest(idTokenResult.token))
 			})
 	}
 
 	return (
 		<>
-			<button style={{ padding: 10 }} onClick={login}>
+			<button style={{ padding: 10, marginTop: 100 }} onClick={authorization }>
 				signup
 			</button>
 		</>

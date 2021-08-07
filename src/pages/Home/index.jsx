@@ -6,7 +6,7 @@ function Home() {
 	return (
 		<div className='home'>
 			<div className="container">
-				<h2>Ratatype</h2>
+				<h2>TezTer.kg</h2>
 				<div className='home__main-block'>
 					<h1>Печатай <br/> быстрее</h1>
 					<div>
