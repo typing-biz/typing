@@ -16,11 +16,24 @@ const auth = firebase.auth()
 
 function SignUp() {
 	const login = async () => {
-		const provider = new firebase.auth.GoogleAuthProvider()
-		const user = await auth.signInWithPopup(provider)
-		console.log(user)
+		const user = await auth.signInWithPopup(
+			new firebase.auth.GoogleAuthProvider(),
+		)
+		firebase
+			.auth()
+			.currentUser.getIdTokenResult()
+			.then((idTokenResult) => {
+				console.log(idTokenResult.token)
+			})
 	}
-	return <button style={{padding: 30}} onClick={login}>signup</button>
+
+	return (
+		<>
+			<button style={{ padding: 10 }} onClick={login}>
+				signup
+			</button>
+		</>
+	)
 }
 
 export default SignUp

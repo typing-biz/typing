@@ -15,7 +15,7 @@ function Testing() {
 	const [allSeconds, setAllSeconds] = useState(0)
 
 	let text =
-		"Every 5 seconds a computer gets infected with a virus. 13% of Americans actually believe that some parts of the moon are made of cheese. The world's youngest parents were 8 and 9 and lived in China in 1910. If you could count the number of times a cricket chirps in one minute, divide by 2, add 9 and divide by 2 again, you would have the correct temperature in Celsius degrees... How do they know that?"
+		"DaVinci is best remembered as the painter of the Mona Lisa (1504) and The Last Supper (1495). But he's almost equally famous for his astonishing multiplicity of talents: he dabbled in architecture, sculpture, engineering. geology, hydraulics and the military arts, all with success, and in his spare time doodled parachutes and flying machines that resembled inventions of the 19th and 20th centuries."
 
 	let textArray = text.split('')
 
@@ -74,7 +74,7 @@ function Testing() {
 										? wrongStep
 											? 'green'
 											: 'red'
-										: 'white',
+										: 'white' && id < index ? 'yellow': 'white'
 							}}
 							key={id}
 						>
