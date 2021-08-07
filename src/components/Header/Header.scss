@@ -30,6 +30,7 @@
 		width: 391px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		text-align: center;
 	}
 	nav a {
@@ -40,5 +41,26 @@
 		font-size: 14px;
 		line-height: 16px;
 		color: #ffffff;
+	}
+	.header__block__profile {
+		display: flex;
+	}
+	.header__select {
+		border: none;
+		background-color: inherit;
+		font-family: Comfortaa;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 16px;
+		color: #ffffff;
+	}
+	.header__select option {
+		color: black;
+	}
+	img {
+		width: 30px;
+		margin-right: 5px;
+		border-radius: 50%;
 	}
 }

@@ -6,7 +6,6 @@ import SignUp from '../pages/Login'
 import Profile from '../pages/Profile'
 import Testing from '../pages/Testing'
 import Rating from '../Rating'
-import Registre from '../pages/Registre'
 
 function Routes() {
 	return (
