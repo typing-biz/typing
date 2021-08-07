@@ -9,7 +9,7 @@ function Header() {
 		<header className='header'>
 			<div className='container'>
 				<Link className='link' to='/'>
-					<div className='header__logo'>MIR Typing</div>
+					<div className='header__logo'>TezTer</div>
 				</Link>
 
 				<nav>

@@ -1,12 +1,23 @@
 $kyzyl: rgb(223, 192, 192);
 
 .testin-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: $kyzyl;
 	height: 100vh;
     padding: 100px;
+	.testing-block__body {
+		font-size: 17px;
+		background-color: rgb(255, 255, 255);
+		padding: 30px;
+		width: 50%;
+	}
 	.testing-block__area {
 		position: absolute;
 		top: 0;
+		left: 0;
+		right: 0;
 		height: 100%;
 		width: 100%;
 		opacity: 0;

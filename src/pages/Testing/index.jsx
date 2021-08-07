@@ -56,20 +56,16 @@ function Testing() {
 			setAccuracy(accuracy - 0.3)
 		}
 		if (index + 1 === textArray.length) {
-            clearTimeout(timer)
-            setFinish(true)
-        }
+			clearTimeout(timer)
+			setFinish(true)
+		}
 	}
 
 	return (
 		<div className='testin-block'>
 			<h1>{`${minutes}:${seconds}`}</h1>
-			<h1>
-				{textArray.map((el,id) => {
-					// let color = ''E
-					// if(i < text.length){
-					// 	color = s === text[i] ? 'green' : 'red'
-					// }
+			<div className='testing-block__body'>
+				{textArray.map((el, id) => {
 					return (
 						<span
 							style={{
@@ -78,16 +74,17 @@ function Testing() {
 										? wrongStep
 											? 'green'
 											: 'red'
-										: 'white' && id < index ? 'yellow': 'white'
+										: 'white' && id < index
+										? 'yellow'
+										: 'white',
 							}}
 							key={id}
 						>
 							{el}
 						</span>
-						// <span key={`$(s)_`} className={color}>{s}</span>
 					)
 				})}
-			</h1>
+			</div>
 			<textarea
 				className='testing-block__area'
 				cols='50'
