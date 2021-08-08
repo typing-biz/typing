@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Registre from "../pages/Registre";
+import Login from '../pages/Login'
 import Routes from "../routes";
 
 function Layout() {
@@ -15,7 +15,7 @@ function Layout() {
         </div>
       ) : (
         <div>
-			<Registre />
+			<Login />
 		</div>
       )}
     </>
