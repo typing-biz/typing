@@ -1,4 +1,4 @@
-import { CHANGE_TOKEN, LOGIN } from '../actions'
+import { CHANGE_TOKEN, LOGIN, LOGOUT } from '../actions'
 
 const local = JSON.parse(localStorage.getItem('user'))
 
@@ -20,6 +20,8 @@ export const authReducer = (state = local || initialState, action) => {
 				...state,
 				token: action.payload,
 			}
+		case LOGOUT:
+			return initialState
 
 		default:
 			return state
