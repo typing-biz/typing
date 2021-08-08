@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -6,37 +6,29 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import NativeSelect from '@material-ui/core/NativeSelect'
-
+import { useHistory } from 'react-router'
 import './Header.scss'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { logOut } from '../../store/actions'
 
 function Header() {
+	const [switchSelect, setSwitchSelect] = useState('profile')
+	const user = useSelector((state) => state.authReducer.user)
+	const history = useHistory()
+	const dispatch = useDispatch()
 
-	const user = useSelector(state => state.authReducer.user)
-	console.log(user)
-
-	const useStyles = makeStyles((theme) => ({
-		formControl: {
-			margin: theme.spacing(1),
-			minWidth: 120,
-		},
-		selectEmpty: {
-			marginTop: theme.spacing(2),
-		},
-	}))
-	const classes = useStyles()
-	const [state, setState] = React.useState({
-		age: '',
-		name: 'hai',
-	})
-
-	const handleChange = (event) => {
-		const name = event.target.name
-		setState({
-			...state,
-			[name]: event.target.value,
-		})
+	switch(switchSelect) {
+		case 'footer':
+			 alert('test')
+			break;
+		case 'out':
+			dispatch(logOut())
+			break;
+		default:
+			setSwitchSelect('profile')
 	}
+
 	return (
 		<header className='header'>
 			<div className='container'>
@@ -48,14 +40,24 @@ function Header() {
 					<Link to='/testing'>Тестирование</Link>
 					<Link to='/rating'>Рейтинг</Link>
 					<div className='header__block__profile'>
-					<img src={user.thumbnail} alt="" />
-					<select className="header__select">
-						<option>
+						<img
+							src={user.thumbnail}
+							alt='imgLogo'
+							onClick={() => history.push('/profile')}
+						/>
+						<div className='header__block__profile__uName'>
 							{user.fullName}
-							</option>
-						<option>О нас</option>
-						<option>Выйти</option>
-					</select>
+							<select
+								className='header__select'
+								onChange={(event) =>
+									setSwitchSelect(event.target.value)
+								}
+							>
+								<option value='profile'>{user.fullName}</option>
+								<option value='footer'>О нас</option>
+								<option value='out'>Выйти</option>
+							</select>
+						</div>
 					</div>
 				</nav>
 			</div>
