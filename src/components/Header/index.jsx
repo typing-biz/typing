@@ -18,7 +18,7 @@ function Header() {
 	const history = useHistory()
 	const dispatch = useDispatch()
 
-
+	
 	return (
 		<header className='header'>
 			<div className='container'>
