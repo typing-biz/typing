@@ -1,11 +1,11 @@
 .header {
 	padding-top: 16px;
 	padding-bottom: 16px;
-	background-color: #ff9000;
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: 2;
+	background-color: #ffffff;
+	
+	
+	// width: 100%;
+
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -18,7 +18,7 @@
 		font-weight: bold;
 		font-size: 36.4286px;
 		line-height: 41px;
-		color: #ffffff;
+		color: #000000;
 		text-decoration: none;
 		border: none;
 	}
@@ -40,7 +40,25 @@
 		font-weight: bold;
 		font-size: 14px;
 		line-height: 16px;
+		color: #000000;
+	}
+	&__btn-login {
+		background: #ff9000;
+		// filter: blur(22px);
+		width: 140px;
+		height: 25px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
 		color: #ffffff;
+		border: none;
+	}
+
+	&__modal {
+		width: 600px;
+		height: 350px;
 	}
 	.header__block__profile {
 		display: flex;
@@ -68,7 +86,7 @@
 			outline: none;
 		}
 		.header__select option {
-			color: black;
+			color: rgb(22, 21, 21);
 		}
 	}
 	img {
