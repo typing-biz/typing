@@ -18,7 +18,7 @@ function Header() {
 	const history = useHistory()
 	const dispatch = useDispatch()
 
-	
+	console.log(switchSelect);
 	return (
 		<header className='header'>
 			<div className='container'>
