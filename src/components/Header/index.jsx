@@ -18,16 +18,6 @@ function Header() {
 	const history = useHistory()
 	const dispatch = useDispatch()
 
-	// switch(switchSelect) {
-	// 	case 'footer':
-	// 		 alert('test')
-	// 		break;
-	// 	case 'out':
-	// 		dispatch(logOut())
-	// 		break;
-	// 	default:
-	// 		setSwitchSelect('profile')
-	// }
 
 	return (
 		<header className='header'>
