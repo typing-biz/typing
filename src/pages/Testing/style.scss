@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    // margin-top: 40px;
   }
 
   .testing-block__body {
@@ -19,14 +19,18 @@
     left: 191px;
     top: 180px;
 
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px );
     padding: 30px;
+    font-size:medium;
+    word-spacing: 3px;
   }
   .testing-block__area {
     position: absolute;
+    font-size:x-large;
+
     top: 0;
     left: 0;
     right: 0;
