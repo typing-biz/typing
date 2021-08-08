@@ -8,6 +8,7 @@ import { change_token, loginRequest } from "../../store/actions";
 import pic1 from "../../assets/img/Google - Original.png";
 import pic2 from "../../assets/img/Rectangle 27.png";
 import pic3 from '../../assets/img/Group 22.png'
+import pic4 from '../../assets/img/slider.png'
 import './style.scss'
 
 firebase.initializeApp({
@@ -74,7 +75,12 @@ function SignUp() {
             </div>
           </div>
           <img src={pic2} className="block__img" />
+		 
         </div>
+		<div>
+		<img src={pic4} />
+		</div>
+	
       </div>
     </div>
   );
