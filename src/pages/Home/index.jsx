@@ -1,27 +1,36 @@
 import React from 'react'
 import './Home.scss'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Modal from '../../components/Modal'
 
 function Home() {
 	return (
+	
 		<div className='home'>
-			<div className="container">
-				<h2>Ratatype</h2>
+			<div className='container'>
 				<div className='home__main-block'>
-					<h1>Печатай <br/> быстрее</h1>
-					<div>
-						<p>
-							Нучись быстро печатать с клавиатурным тренажером{' '}
-							<br />
-							Ratatype. А уроки слепой печати помогут тебе <br />
+					<div className='home__main-block'>
+						<h1>
+							Печатай <br /> быстрее
+						</h1>
+						<p className='home__description'>
+							Нучись быстро печатать с клавиатурным тренажером
+							Tezter. <br /> А уроки слепой печати помогут тебе
 							использовать все 10 пальцев.
 						</p>
-						<img src='' alt='' />
-					</div>
-					<div className="home__btns">
-						<Link to="/testing">	<button className="home__start-btn">Начать печатать</button></Link>
-						<Link to="/rating">	<button className="home__rating-btn">Рейтинг</button></Link>
-					
+						<div className='home__test-block'>
+							<p>Пройди тест скорости печати</p>
+							<Link to="/testing">
+								<button className='home__btn-start'>
+									Начать
+								</button>
+							</Link>
+						</div>
+						<p className='home__speed'>
+							Узнай свою скорость печати и удиви приятелей или{' '}
+							<br />
+							руководство полученным сертификатом.
+						</p>
 					</div>
 				</div>
 			</div>
