@@ -1,14 +1,37 @@
-$kyzyl: rgb(223, 192, 192);
-
 .testin-block {
-	background-color: $kyzyl;
-	height: 100vh;
-    padding: 100px;
-	.testing-block__area {
-		position: absolute;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		opacity: 0;
-	}
+  background-repeat: repeat-y;
+  background-size: cover;
+  height: 100vh;
+  padding: 100px;
+  background-size: contain;
+  background-image: url(../../assets/img/img1.png);
+
+  .testing__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .testing-block__body {
+    width: 770px;
+    height: 334px;
+    left: 191px;
+    top: 180px;
+
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 30px;
+  }
+  .testing-block__area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+  }
 }
