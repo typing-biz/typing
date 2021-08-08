@@ -14,6 +14,7 @@ function Routes() {
 				<Route path='/profile' component={Profile} />
 				<Route path='/testing' component={Testing} />
 				<Route path='/rating' component={Rating} />
+				<Route path='/signUp' component={SignUp} />
 				<Route exact path='/' component={Home} />
 				<Route path='*' component={NotFound}/>
 			</Switch>
