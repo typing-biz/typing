@@ -8,6 +8,7 @@ import 'firebase/auth'
 import pic1 from '../../assets/img/Google - Original.png'
 import pic2 from '../../assets/img/Rectangle 27.png'
 import pic3 from '../../assets/img/Group 22.png'
+
 import './style.scss'
 
 firebase.initializeApp({
