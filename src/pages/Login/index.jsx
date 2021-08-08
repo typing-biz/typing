@@ -11,15 +11,15 @@ import pic3 from '../../assets/img/Group 22.png'
 import './style.scss'
 
 firebase.initializeApp({
-	apiKey: 'AIzaSyCah7OnZFSyTqo2TwcTPeIfYlTuj9PEC3Y',
-	authDomain: 'typingapp-4708c.firebaseapp.com',
-	projectId: 'typingapp-4708c',
-	storageBucket: 'typingapp-4708c.appspot.com',
-	messagingSenderId: '1075061874474',
-	appId: '1:1075061874474:web:23eed836828b457eb3c853',
-})
+  apiKey: "AIzaSyCah7OnZFSyTqo2TwcTPeIfYlTuj9PEC3Y",
+  authDomain: "typingapp-4708c.firebaseapp.com",
+  projectId: "typingapp-4708c",
+  storageBucket: "typingapp-4708c.appspot.com",
+  messagingSenderId: "1075061874474",
+  appId: "1:1075061874474:web:23eed836828b457eb3c853",
+});
 
-const auth = firebase.auth()
+const auth = firebase.auth();
 
 function SignUp() {
 	const dispatch = useDispatch()
@@ -78,4 +78,4 @@ function SignUp() {
 	)
 }
 
-export default SignUp
+export default SignUp;

@@ -11,7 +11,6 @@ function Routes() {
 	return (
 		<>
 			<Switch>
-				<Route path='/signUp' component={SignUp} />
 				<Route path='/profile' component={Profile} />
 				<Route path='/testing' component={Testing} />
 				<Route path='/rating' component={Rating} />
