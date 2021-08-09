@@ -5,7 +5,7 @@ import Home from '../pages/Home'
 import SignUp from '../pages/Login'
 import Profile from '../pages/Profile'
 import Testing from '../pages/Testing'
-import Rating from '../Rating'
+import Rating from '../pages/Rating'
 
 function Routes() {
 	return (
