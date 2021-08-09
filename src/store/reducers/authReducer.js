@@ -7,7 +7,7 @@ const initialState = {
 	token: null,
 }
 
-export const authReducer = (state = local || initialState, action) => {
+export const authReducer = (state = local || initialState, action) => {	
 	switch (action.type) {
 		case LOGIN:
 			return {
