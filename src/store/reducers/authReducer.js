@@ -3,7 +3,7 @@ import { CHANGE_TOKEN, LOGIN, LOGOUT } from '../actions'
 const local = JSON.parse(localStorage.getItem('user'))
 
 const initialState = {
-	user: null,
+	user: 'null',
 	token: null,
 }
 
