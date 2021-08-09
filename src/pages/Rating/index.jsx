@@ -4,7 +4,7 @@ import './Rating.scss'
 
 function Rating() {
 
-    const rating = useSelector((state) => state.user)
+    const rating = useSelector((state) => state.authReducer.user)
 
 	return (
 		<div className='rating'>
@@ -16,21 +16,18 @@ function Rating() {
 				</p>
 				<div className='rating__rating-block'>
 					<table>
+                        {
+                            
+                        }
 						<tr>
 							<th>Позиция</th>
-							<th></th>
+							<th>ФИО</th>
 							<th>Скорость</th>
 							<th>Точность</th>
 						</tr>
 						<tr>
 							<td className="first">1</td>
-							<td>Oleg Gazmanovaevwrebethrthr</td>
-							<td>500</td>
-							<td>100</td>
-						</tr>
-						<tr>
-							<td className="first">1</td>
-							<td>Oleg wrebethrthr</td>
+							<td>Oleg Gazmanov</td>
 							<td>500</td>
 							<td>100</td>
 						</tr>
