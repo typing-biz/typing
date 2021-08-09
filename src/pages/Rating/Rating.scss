@@ -1,0 +1,42 @@
+.rating {
+	// background-color: rgb(238, 238, 237);
+
+	h1 {
+		margin-top: 50px;
+		color: #ff9000;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 40px;
+		line-height: 15px;
+	}
+	p {
+		margin-top: 50px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 15px;
+		color: silver;
+	}
+	&__rating-block {
+		background-color: rgb(255, 137, 1);
+		margin-top: 50px;
+		padding: 50px;
+	}
+	td,
+	th {
+		text-align: center;
+		padding: 8px;
+        color: white;
+	}
+
+    table{
+        width: 900px;
+        border: none;
+    }
+    th{
+        color: black;
+    }
+    
+}
