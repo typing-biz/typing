@@ -8,6 +8,7 @@ import Testing from '../pages/Testing'
 import Rating from '../pages/Rating'
 
 function Routes() {
+	
 	return (
 		<>
 			<Switch>

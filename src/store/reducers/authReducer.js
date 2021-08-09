@@ -2,12 +2,16 @@ import { CHANGE_TOKEN, LOGIN, LOGOUT } from '../actions'
 
 const local = JSON.parse(localStorage.getItem('user'))
 
-const initialState = {
-	user: 'null',
-	token: null,
+const initialState = local || {
+	user: {
+		thumbnail: '',
+		fullName: 'user user',
+		email: 'aza12@gmail.com'
+	},
+	token: '',
 }
 
-export const authReducer = (state = local || initialState, action) => {
+export const authReducer = (state =  initialState, action) => {
 	switch (action.type) {
 		case LOGIN:
 			return {

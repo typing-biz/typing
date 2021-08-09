@@ -1,11 +1,8 @@
 import React from 'react'
 import './Home.scss'
 import { Link } from 'react-router-dom'
-import Modal from '../../components/Modal'
-
 function Home() {
 	return (
-	
 		<div className='home'>
 			<div className='container'>
 				<div className='home__main-block'>
@@ -20,7 +17,7 @@ function Home() {
 						</p>
 						<div className='home__test-block'>
 							<p>Пройди тест скорости печати</p>
-							<Link to="/testing">
+							<Link to='/testing'>
 								<button className='home__btn-start'>
 									Начать
 								</button>
