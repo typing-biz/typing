@@ -1,8 +1,8 @@
-import userEvent from '@testing-library/user-event'
-import './App.css'
-import Layout from './Layout'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
+
+import Layout from './Layout'
+import './App.css'
 
 function App() {
 	const state = useSelector((state) => state.authReducer)
