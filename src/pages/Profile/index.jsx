@@ -8,9 +8,9 @@ export const Profile = () => {
     console.log(state)
     return (
         <div>
-        <h1 style={{paddingTop:100}}>{state.fullName}</h1>
+        {/* <h1 style={{paddingTop:100}}>{state.fullName}</h1>
         <h2>{state.email}</h2>
-        <img src={state.thumbnail} alt="" />
+        <img src={state.thumbnail} alt="" /> */}
         </div>
 
         

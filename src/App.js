@@ -5,11 +5,15 @@ import Layout from './Layout'
 import './App.css'
 
 function App() {
-	const state = useSelector((state) => state.authReducer)
+	const state = useSelector((state) => state)
+	const authState = useSelector((state) => state.authReducer)
 
 	useEffect(() => {
-		localStorage.setItem('user', JSON.stringify(state))
-	}, [state])
+		localStorage.setItem('user', JSON.stringify(authState))
+	}, [authState])
+	useEffect(() => {
+		localStorage.setItem('user', JSON.stringify(authState))
+	}, [])
 
 	return (
 		<div className='App'>

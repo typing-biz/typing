@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import CachedIcon from '@material-ui/icons/Cached'
+import Modal from '../../components/Modal'
 import './style.scss'
+import Numbers from '../../components/Numbers/Numbers'
 
 function Testing() {
 	const [index, setIndex] = useState(0)
@@ -14,6 +16,8 @@ function Testing() {
 	const [minutes, setMinutes] = useState(0)
 	const [seconds, setSeconds] = useState(0)
 	const [allSeconds, setAllSeconds] = useState(0)
+	const [countdown, setCountdown] = useState(6)
+	const [disabled, setDisabled] = useState(true)
 
 	let text =
 		"DaVinci is best remembered as the painter of the Mona Lisa (1504) and The Last Supper (1495). But he's almost equally famous for his astonishing multiplicity of talents: he dabbled in architecture, sculpture, engineering. geology, hydraulics and the military arts, all with success, and in his spare time doodled parachutes and flying machines that resembled inventions of the 19th and 20th centuries."
@@ -41,11 +45,16 @@ function Testing() {
 	}, [seconds])
 
 	useEffect(() => {
-		setTimeout(() => {
-			setStart(true)
-			setSeconds(1)
-		}, 5000)
-	}, [])
+		if (countdown > 0 && countdown < 6) {
+			setTimeout(() => {
+				setCountdown(countdown - 1)
+			}, 1000)
+		} else if (countdown === 0) {
+			setDisabled(false)
+		}
+	}, [countdown])
+
+
 
 	function checkKeyHandler(e) {
 		if (textArray[index] === e.key) {
@@ -62,8 +71,11 @@ function Testing() {
 		}
 	}
 
+	
+
 	return (
 		<div className='testin-block'>
+			{countdown === 6 && <Modal onClick={() => setCountdown(5)}/>}
 			<div className='container'>
 				<div className='testing__main'>
 					<div className='testing-block__body'>
@@ -86,14 +98,12 @@ function Testing() {
 								</span>
 							)
 						})}
-						<div
-							style={{
-								display: 'flex',
-								justifyContent: 'flex-end',
-								marginTop:70,
-							}}
-						>
-							<CachedIcon />
+						<div className='refresh-block'>
+							{countdown > 0 && countdown < 6 && (
+								<Numbers>{countdown}</Numbers>
+							)}
+
+					<CachedIcon style={{ width: 30, height: 30 ,cursor:'pointer'}} />
 						</div>
 					</div>
 					<textarea
@@ -102,6 +112,7 @@ function Testing() {
 						rows='10'
 						onKeyPress={(event) => checkKeyHandler(event)}
 						autoFocus
+						disabled={disabled}
 					></textarea>
 					{finish ? (
 						<div>
