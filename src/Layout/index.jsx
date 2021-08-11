@@ -12,7 +12,7 @@ function Layout() {
 		<>
 			{true ? (
 				<div>
-					<Header />
+				<Header />
 					<Routes />
 					<Footer />
 				</div>
