@@ -1,11 +1,12 @@
 #footer {
   display: flex;
   justify-content: space-between;
-  //  width:1200;
   height: 65px;
   align-items: center;
-  // background-color:#EDEDED;
-  background-color: #fafafa;
+  background-image: url(../../assets/img/rating.png);
+ background-repeat: repeat-y;
+ background-size: cover;
+
 
   .footer-one {
     width: 350px;
@@ -52,4 +53,6 @@
       background-color: violet;
     }
   }
+  
 }
+

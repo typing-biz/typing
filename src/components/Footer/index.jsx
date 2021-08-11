@@ -12,7 +12,7 @@ function Footer() {
     <div id="footer">
       <div className="footer-one">
         <span>TezTer | 2021</span>
-        <span className="footer-one-title">tezterkg@gmail.com</span>
+        <span className="footer-one-title"><a href="#">tezterkg@gmail.com</a></span>
       </div>
 
       <div className="footer-two">
