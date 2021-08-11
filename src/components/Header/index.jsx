@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { logOut } from '../../store/actions'
 
+
 function Header() {
 	const user = useSelector((state) => state.authReducer.user)
 	const history = useHistory()

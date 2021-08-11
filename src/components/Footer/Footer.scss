@@ -1,0 +1,55 @@
+#footer {
+  display: flex;
+  justify-content: space-between;
+  //  width:1200;
+  height: 65px;
+  align-items: center;
+  // background-color:#EDEDED;
+  background-color: #fafafa;
+
+  .footer-one {
+    width: 350px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer-one-title {
+      font-family: Baloo Chettan 2;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 124.5%;
+      color: #e0e0e0;
+      cursor: pointer;
+    }
+
+    span {
+      font-family: Baloo Chettan 2;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 124.5%;
+      color: #e0e0e0;
+    }
+  }
+
+  .footer-two {
+    width: 400px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a img {
+      width: 23px;
+      height: 23px;
+    }
+
+    a img:hover {
+      box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+      transition: 0.5s ease-in-out;
+      background-color: violet;
+    }
+  }
+}
