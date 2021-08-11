@@ -18,15 +18,7 @@ function Rating() {
               результатов.
             </p>
           </div>
-          <div
-            style={{
-              borderBottom: "1px solid",
-              width: 768,
-              borderColor: "#929292",
-              marginLeft: 111,
-              paddingBottom: 10,
-            }}
-          >
+          <div className="rating-block-main">
             <div className="rating-block__two">
               <span className="rating-block__two__title1">
                 <img
@@ -46,7 +38,7 @@ function Rating() {
             </div>
           </div>
           <div className="rating__rating-block">
-            <div> 1 .  Isaeva Jasmina</div>
+            <div> 1 . Isaeva Jasmina</div>
             <div>600</div>
             <div>96.1%</div>
           </div>
