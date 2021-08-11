@@ -10,9 +10,9 @@ function Layout() {
 	console.log(user)
 	return (
 		<>
-			{false ? (
+			{true ? (
 				<div>
-					<Header />
+				<Header />
 					<Routes />
 					<Footer />
 				</div>
