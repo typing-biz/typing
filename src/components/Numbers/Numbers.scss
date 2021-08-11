@@ -4,7 +4,6 @@
 *::before,
 *::after {
 	padding: 0;
-	margin: 0 auto;
 	box-sizing: border-box;
 }
 
@@ -21,11 +20,11 @@
 .content {
 	--positionX: 7;
 	--positionY: 7;
-    left:-45%;
+	left: -45%;
 	position: absolute;
 	top: -100%;
 	// left: 30%;
-    
+
 	z-index: 25;
 	display: flex;
 	justify-content: center;

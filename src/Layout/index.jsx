@@ -19,7 +19,7 @@ function Layout() {
 			) : (
 				<div>
 					<Routes />
-					<Redirect to='/signUp'/>
+					<Redirect to='/signUp' />
 				</div>
 			)}
 		</>
