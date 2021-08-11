@@ -4,8 +4,14 @@ import CachedIcon from '@material-ui/icons/Cached'
 import Modal from '../../components/Modal'
 import './style.scss'
 import Numbers from '../../components/Numbers/Numbers'
+import { useSelector, useDispatch } from 'react-redux'
+import { text, textRequest } from '../../store/actions'
 
 function Testing() {
+	const fetchedText = useSelector((state) => state.authReducer.text)
+	console.log(fetchedText)
+	const dispatch = useDispatch()
+
 	const [index, setIndex] = useState(0)
 	const [wrongStep, setWrongStep] = useState(true)
 	const [wrongStepCount, setWrongStepCount] = useState(0)
@@ -19,10 +25,19 @@ function Testing() {
 	const [countdown, setCountdown] = useState(6)
 	const [disabled, setDisabled] = useState(true)
 
-	let text =
-		"DaVinci is best remembered as the painter of the Mona Lisa (1504) and The Last Supper (1495). But he's almost equally famous for his astonishing multiplicity of talents: he dabbled in architecture, sculpture, engineering. geology, hydraulics and the military arts, all with success, and in his spare time doodled parachutes and flying machines that resembled inventions of the 19th and 20th centuries."
+	// useEffect(() => {
+	// 	localStorage.setItem('accuracy', accuracy)
+	// }, [accuracy])
+	console.log(fetchedText)
+	let textArray = fetchedText ? fetchedText.split('') : []
+	// let textArray = []
 
-	let textArray = text.split('')
+	// const func = () => {}
+	// console.log(text)
+
+	useEffect(() => {
+		dispatch(textRequest())
+	}, [])
 
 	useEffect(() => {
 		if (start) {
@@ -54,8 +69,6 @@ function Testing() {
 		}
 	}, [countdown])
 
-
-
 	function checkKeyHandler(e) {
 		if (textArray[index] === e.key) {
 			setWrongStep(true)
@@ -71,11 +84,9 @@ function Testing() {
 		}
 	}
 
-	
-
 	return (
 		<div className='testin-block'>
-			{countdown === 6 && <Modal onClick={() => setCountdown(5)}/>}
+			{countdown === 6 && <Modal onClick={() => setCountdown(5)} />}
 			<div className='container'>
 				<div className='testing__main'>
 					<div className='testing-block__body'>
@@ -103,7 +114,13 @@ function Testing() {
 								<Numbers>{countdown}</Numbers>
 							)}
 
-					<CachedIcon style={{ width: 30, height: 30 ,cursor:'pointer'}} />
+							<CachedIcon
+								style={{
+									width: 30,
+									height: 30,
+									cursor: 'pointer',
+								}}
+							/>
 						</div>
 					</div>
 					<textarea
@@ -127,6 +144,8 @@ function Testing() {
 							</h1>
 						</div>
 					) : null}
+
+					<button>ad</button>
 				</div>
 			</div>
 		</div>
