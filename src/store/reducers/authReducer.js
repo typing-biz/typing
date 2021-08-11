@@ -11,6 +11,8 @@ const initialState = local || {
 	},
 	token: '',
 	text: '',
+	id: '',
+	
 }
 
 export const authReducer = (state =  initialState, action) => {
@@ -31,6 +33,7 @@ export const authReducer = (state =  initialState, action) => {
 		return {
 			...state,
 			text: action.payload,
+			id: action.id
 		}
 
 		default:

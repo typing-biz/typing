@@ -5,10 +5,12 @@ import Modal from '../../components/Modal'
 import './style.scss'
 import Numbers from '../../components/Numbers/Numbers'
 import { useSelector, useDispatch } from 'react-redux'
-import { text, textRequest } from '../../store/actions'
+import { text, textRequest, testingRequest } from '../../store/actions'
+
 
 function Testing() {
 	const fetchedText = useSelector((state) => state.authReducer.text)
+	const fetchedId = useSelector((state) => state.authReducer.id)
 	console.log(fetchedText)
 	const dispatch = useDispatch()
 
@@ -16,7 +18,7 @@ function Testing() {
 	const [wrongStep, setWrongStep] = useState(true)
 	const [wrongStepCount, setWrongStepCount] = useState(0)
 	const [accuracy, setAccuracy] = useState(100)
-	const [start, setStart] = useState(false)
+	const [start, setStart] = useState(true)
 	const [finish, setFinish] = useState(false)
 	const [timer, setTimer] = useState()
 	const [minutes, setMinutes] = useState(0)
@@ -25,16 +27,24 @@ function Testing() {
 	const [countdown, setCountdown] = useState(6)
 	const [disabled, setDisabled] = useState(true)
 
-	// useEffect(() => {
-	// 	localStorage.setItem('accuracy', accuracy)
-	// }, [accuracy])
+	
+    
+    
+	//text
 	console.log(fetchedText)
+	console.log(fetchedId)
 	let textArray = fetchedText ? fetchedText.split('') : []
-	// let textArray = []
 
-	// const func = () => {}
-	// console.log(text)
+	const speed = Math.round(
+		textArray.length / (allSeconds / 60),
+	)
 
+	
+	useEffect(() => {
+		finish &&
+		localStorage.setItem('accuracy', JSON.stringify({speed, accuracy, fetchedId}))
+	}, [speed])
+	
 	useEffect(() => {
 		dispatch(textRequest())
 	}, [])
@@ -81,6 +91,7 @@ function Testing() {
 		if (index + 1 === textArray.length) {
 			clearTimeout(timer)
 			setFinish(true)
+			dispatch(testingRequest({speed, accuracy, fetchedId}))
 		}
 	}
 
@@ -134,10 +145,10 @@ function Testing() {
 					{finish ? (
 						<div>
 							<h1>Finish</h1>
-							<h1>
-								{Math.round(
-									textArray.length / (allSeconds / 60),
-								)}
+							<h1> 
+								
+								{speed}
+								
 							</h1>
 							<h1>
 								{accuracy === 100 ? 100 : accuracy.toFixed(1)}%
@@ -145,7 +156,7 @@ function Testing() {
 						</div>
 					) : null}
 
-					<button>ad</button>
+					
 				</div>
 			</div>
 		</div>
