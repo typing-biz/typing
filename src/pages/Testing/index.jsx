@@ -5,20 +5,20 @@ import Modal from '../../components/Modal'
 import './style.scss'
 import Numbers from '../../components/Numbers/Numbers'
 import { useSelector, useDispatch } from 'react-redux'
-import { text, textRequest, testingRequest } from '../../store/actions'
-
+import { getTextRequest, sendTestingRequest } from '../../store/actions'
 
 function Testing() {
+	
 	const fetchedText = useSelector((state) => state.authReducer.text)
 	const fetchedId = useSelector((state) => state.authReducer.id)
-	console.log(fetchedText)
+
 	const dispatch = useDispatch()
 
 	const [index, setIndex] = useState(0)
 	const [wrongStep, setWrongStep] = useState(true)
 	const [wrongStepCount, setWrongStepCount] = useState(0)
 	const [accuracy, setAccuracy] = useState(100)
-	const [start, setStart] = useState(true)
+	const [start, setStart] = useState(false)
 	const [finish, setFinish] = useState(false)
 	const [timer, setTimer] = useState()
 	const [minutes, setMinutes] = useState(0)
@@ -26,27 +26,31 @@ function Testing() {
 	const [allSeconds, setAllSeconds] = useState(0)
 	const [countdown, setCountdown] = useState(6)
 	const [disabled, setDisabled] = useState(true)
+	const [speed, setSpeed] = useState(0)
 
-	
-    
-    
 	//text
 	console.log(fetchedText)
 	console.log(fetchedId)
-	let textArray = fetchedText ? fetchedText.split('') : []
 
-	const speed = Math.round(
-		textArray.length / (allSeconds / 60),
-	)
+	// let textArray = fetchedText ? fetchedText.split('') : []
+	let textArray =
+		'heelllooooooooooooooooooooooooooo world heyyyyyyyyyyyy new yorkkkkkkkkkkkkkkkkkkkkkkk'.split('')
+     
+		 
+	useEffect(() => {
+		setSpeed(Math.round(textArray.length / (allSeconds / 60)))
+		console.log(speed)
+	}, [seconds])
 
-	
 	useEffect(() => {
-		finish &&
-		localStorage.setItem('accuracy', JSON.stringify({speed, accuracy, fetchedId}))
-	}, [speed])
-	
+		localStorage.setItem(
+			'accuracy',
+			JSON.stringify({speed, accuracy, fetchedId }),
+		)
+	}, [finish])
+
 	useEffect(() => {
-		dispatch(textRequest())
+		dispatch(getTextRequest())
 	}, [])
 
 	useEffect(() => {
@@ -76,6 +80,7 @@ function Testing() {
 			}, 1000)
 		} else if (countdown === 0) {
 			setDisabled(false)
+			setStart(true)
 		}
 	}, [countdown])
 
@@ -91,9 +96,11 @@ function Testing() {
 		if (index + 1 === textArray.length) {
 			clearTimeout(timer)
 			setFinish(true)
-			dispatch(testingRequest({speed, accuracy, fetchedId}))
+			dispatch(sendTestingRequest({ speed, accuracy, fetchedId }))
 		}
 	}
+
+
 
 	return (
 		<div className='testin-block'>
@@ -139,24 +146,21 @@ function Testing() {
 						cols='50'
 						rows='10'
 						onKeyPress={(event) => checkKeyHandler(event)}
-						autoFocus
+						autoFocus={!disabled}
 						disabled={disabled}
 					></textarea>
 					{finish ? (
 						<div>
 							<h1>Finish</h1>
-							<h1> 
-								
-								{speed}
-								
-							</h1>
+							<h1>{speed}</h1>
 							<h1>
 								{accuracy === 100 ? 100 : accuracy.toFixed(1)}%
 							</h1>
+						
 						</div>
 					) : null}
-
-					
+					<h1>{minutes}</h1>
+					<h1>{seconds}</h1>
 				</div>
 			</div>
 		</div>
