@@ -18,7 +18,7 @@ export const loginRequest = (token) => (dispatch) => {
 		.then((user) => dispatch(login(user)))
 }
 
-export const textRequest = (token) => (dispatch) => {
+export const getTextRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_TEXT, {
 		method: 'GET',
 		headers: {
@@ -29,7 +29,7 @@ export const textRequest = (token) => (dispatch) => {
 		.then((response) => response.json())
 		.then((data) => dispatch(text(data.text, data.id)))
 }
-export const testingRequest = ({speed, accuracy, fetchedId}) => (dispatch, getState) => {
+export const sendTestingRequest = ({speed, accuracy, fetchedId}) => (dispatch, getState) => {
 	const token = getState().authReducer.token
 	fetch(DEFAULT_URL_TESTING, {
 		method: 'POST',
