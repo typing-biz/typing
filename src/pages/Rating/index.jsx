@@ -9,8 +9,8 @@ function Rating() {
 
   return (
     <div className="rating-block">
-      <div className="rating">
-        <div className="container">
+      <div  className="container" >
+        <div className="rating" >
           <div className="rating-block__one">
             <h1>Рейтинг</h1>
             <p>

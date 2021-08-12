@@ -1,58 +1,60 @@
 #footer {
-  display: flex;
-  justify-content: space-between;
   height: 65px;
-  align-items: center;
   background-image: url(../../assets/img/rating.png);
- background-repeat: repeat-y;
- background-size: cover;
+  background-repeat: repeat-y;
+  background-size: cover;
 
+  .container {
+    .footer-block {
+      display: flex;
+      justify-content: space-between;
+     padding-top: 23px;
 
-  .footer-one {
-    width: 350px;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      .footer-one {
+        width: 300px;
+        height: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    .footer-one-title {
-      font-family: Baloo Chettan 2;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 124.5%;
-      color: black;
-      cursor: pointer;
-    }
+        .footer-one-title {
+          font-family: Baloo Chettan 2;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 124.5%;
+          color: black;
+          cursor: pointer;
+        }
 
-    span {
-      font-family: Baloo Chettan 2;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 124.5%;
-      color: black;
+        span {
+          font-family: Baloo Chettan 2;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 124.5%;
+          color: black;
+        }
+      }
+
+      .footer-two {
+        width: 300px;
+        height: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a img {
+          width: 24px;
+          height: 24px;
+        }
+
+        a img:hover {
+          box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+          transition: 0.5s ease-in-out;
+          background-color: black;
+        }
+      }
     }
   }
-
-  .footer-two {
-    width: 400px;
-    height: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    a img {
-      width: 23px;
-      height: 23px;
-    }
-
-    a img:hover {
-      box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
-      transition: 0.5s ease-in-out;
-      background-color: black;
-    }
-  }
-  
 }
-

@@ -19,8 +19,12 @@ function Testing() {
 	const [countdown, setCountdown] = useState(6)
 	const [disabled, setDisabled] = useState(true)
 
+
+ 
+	console.log(allSeconds)
+
 	let text =
-		"DaVinci is best remembered as the painter of the Mona Lisa (1504) and The Last Supper (1495). But he's almost equally famous for his astonishing multiplicity of talents: he dabbled in architecture, sculpture, engineering. geology, hydraulics and the military arts, all with success, and in his spare time doodled parachutes and flying machines that resembled inventions of the 19th and 20th centuries."
+		"DaVinci is best"
 
 	let textArray = text.split('')
 
@@ -112,7 +116,7 @@ function Testing() {
 						rows='10'
 						onKeyPress={(event) => checkKeyHandler(event)}
 						autoFocus
-						disabled={disabled}
+						disabled={disabled} 
 					></textarea>
 					{finish ? (
 						<div>
@@ -125,6 +129,7 @@ function Testing() {
 							<h1>
 								{accuracy === 100 ? 100 : accuracy.toFixed(1)}%
 							</h1>
+						
 						</div>
 					) : null}
 				</div>

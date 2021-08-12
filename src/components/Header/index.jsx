@@ -29,7 +29,7 @@ function Header() {
           <div className="header__block__profile">
             <img
               src={user.thumbnail || ""}
-              alt="imgLogo"
+              
               onClick={() => history.push("/profile")}
             />
             <div className="header__block__profile__uName">
