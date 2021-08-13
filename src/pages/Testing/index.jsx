@@ -7,9 +7,12 @@ import Numbers from '../../components/Numbers/Numbers'
 import { useSelector, useDispatch } from 'react-redux'
 import { getTextRequest, sendTestingRequest } from '../../store/actions'
 
+
 function Testing() {
 	const fetchedText = useSelector((state) => state.authReducer.text)
 	const fetchedId = useSelector((state) => state.authReducer.id)
+
+	
 
 	const dispatch = useDispatch()
 
@@ -26,40 +29,44 @@ function Testing() {
 	const [disabled, setDisabled] = useState(true)
 	const [speed, setSpeed] = useState(0)
 
+	
+
+
 	//text
-	console.log(fetchedText)
-	console.log(fetchedId)
+	// console.log(fetchedText)
+	// console.log(fetchedId)
 
 	let textArray = fetchedText ? fetchedText.split('') : []
-	// let textArray =
-	// 	'heelllooooooooooooooooooooooooooo world heyyyyyyyyyyyy new yorkkkkkkkkkkkkkkkkkkkkkkk'.split('')
+	
 
 	useEffect(() => {
 		setSpeed(Math.round(textArray.length / (minutes + seconds / 60)))
-		console.log('textArray.length is ', textArray.length)
-		console.log('minutes is ', minutes + seconds / 60)
+		// console.log('textArray.length is ', textArray.length)
+		// console.log('minutes is ', minutes + seconds / 60)
 	}, [seconds])
 
 	useEffect(() => {
 		localStorage.setItem(
-			'accuracy',
-			JSON.stringify({ speed, accuracy, fetchedId }),
+			'params',
+			JSON.stringify({ speed, accuracy, fetchedId ,allSeconds}),
 		)
 	}, [finish])
+	
+	let allSeconds = minutes * 60 + seconds
 
 	useEffect(() => {
 		dispatch(getTextRequest())
 	}, [])
 
 	useEffect(() => {
-		console.log('kek start')
+		// console.log('kek start')
 		if (start) {
-			console.log('kek start in')
+			// console.log('kek start in')
 			if (seconds === 0) {
-				console.log('first case')
+				// console.log('first case')
 				setSeconds(seconds + 1)
 			} else if (seconds === 59) {
-				console.log('2 case')
+				// console.log('2 case')
 				setTimeout(() => {
 					setSeconds(0)
 					setMinutes(minutes + 1)
@@ -98,7 +105,7 @@ function Testing() {
 		if (index + 1 === textArray.length) {
 			clearTimeout(timer)
 			setFinish(true)
-			dispatch(sendTestingRequest({ speed, accuracy, fetchedId }))
+			dispatch(sendTestingRequest({ speed, accuracy, fetchedId ,minutes,seconds}))
 		}
 	}
 
@@ -146,7 +153,8 @@ function Testing() {
 						cols='50'
 						rows='10'
 						onKeyPress={(event) => checkKeyHandler(event)}
-						autoFocus={!!seconds}
+						autoFocus={!disabled}
+						
 						disabled={disabled}
 					></textarea>
 					{finish ? (
@@ -158,7 +166,7 @@ function Testing() {
 							</h1>
 						</div>
 					) : null}
-					<h1>{minutes}</h1>
+					<h1>{minutes}:</h1>
 					<h1>{seconds}</h1>
 				</div>
 			</div>

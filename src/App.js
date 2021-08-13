@@ -11,9 +11,10 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem('user', JSON.stringify(authState))
 	}, [authState])
-	useEffect(() => {
-		localStorage.setItem('user', JSON.stringify(authState))
-	}, [])
+
+	// useEffect(() => {
+	// 	localStorage.setItem('user', JSON.stringify(authState))
+	// }, [])
 
 	return (
 		<div className='App'>
