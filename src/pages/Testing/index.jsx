@@ -32,9 +32,8 @@ function Testing() {
 	console.log(fetchedText)
 	console.log(fetchedId)
 
-	// let textArray = fetchedText ? fetchedText.split('') : []
-	let textArray =
-		'heelllooooooooooooooooooooooooooo world heyyyyyyyyyyyy new yorkkkkkkkkkkkkkkkkkkkkkkk'.split('')
+	let textArray = fetchedText ? fetchedText.split('') : []
+
      
 		 
 	useEffect(() => {
