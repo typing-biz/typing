@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getTextRequest, sendTestingRequest } from '../../store/actions'
 
 function Testing() {
-	
 	const fetchedText = useSelector((state) => state.authReducer.text)
 	const fetchedId = useSelector((state) => state.authReducer.id)
 
@@ -23,7 +22,6 @@ function Testing() {
 	const [timer, setTimer] = useState()
 	const [minutes, setMinutes] = useState(0)
 	const [seconds, setSeconds] = useState(0)
-	const [allSeconds, setAllSeconds] = useState(0)
 	const [countdown, setCountdown] = useState(6)
 	const [disabled, setDisabled] = useState(true)
 	const [speed, setSpeed] = useState(0)
@@ -33,18 +31,19 @@ function Testing() {
 	console.log(fetchedId)
 
 	let textArray = fetchedText ? fetchedText.split('') : []
+	// let textArray =
+	// 	'heelllooooooooooooooooooooooooooo world heyyyyyyyyyyyy new yorkkkkkkkkkkkkkkkkkkkkkkk'.split('')
 
-     
-		 
 	useEffect(() => {
-		setSpeed(Math.round(textArray.length / (allSeconds / 60)))
-		console.log(speed)
+		setSpeed(Math.round(textArray.length / (minutes + seconds / 60)))
+		console.log('textArray.length is ', textArray.length)
+		console.log('minutes is ', minutes + seconds / 60)
 	}, [seconds])
 
 	useEffect(() => {
 		localStorage.setItem(
 			'accuracy',
-			JSON.stringify({speed, accuracy, fetchedId }),
+			JSON.stringify({ speed, accuracy, fetchedId }),
 		)
 	}, [finish])
 
@@ -53,15 +52,20 @@ function Testing() {
 	}, [])
 
 	useEffect(() => {
+		console.log('kek start')
 		if (start) {
+			console.log('kek start in')
 			if (seconds === 0) {
+				console.log('first case')
 				setSeconds(seconds + 1)
 			} else if (seconds === 59) {
+				console.log('2 case')
 				setTimeout(() => {
 					setSeconds(0)
 					setMinutes(minutes + 1)
 				}, 1000)
 			} else {
+				console.log('3 case')
 				setTimer(
 					setTimeout(() => {
 						setSeconds(seconds + 1)
@@ -69,8 +73,7 @@ function Testing() {
 				)
 			}
 		}
-		setAllSeconds(minutes * 60 + seconds)
-	}, [seconds])
+	}, [seconds, start])
 
 	useEffect(() => {
 		if (countdown > 0 && countdown < 6) {
@@ -98,8 +101,6 @@ function Testing() {
 			dispatch(sendTestingRequest({ speed, accuracy, fetchedId }))
 		}
 	}
-
-
 
 	return (
 		<div className='testin-block'>
@@ -145,7 +146,7 @@ function Testing() {
 						cols='50'
 						rows='10'
 						onKeyPress={(event) => checkKeyHandler(event)}
-						autoFocus={!disabled}
+						autoFocus={!!seconds}
 						disabled={disabled}
 					></textarea>
 					{finish ? (
@@ -155,7 +156,6 @@ function Testing() {
 							<h1>
 								{accuracy === 100 ? 100 : accuracy.toFixed(1)}%
 							</h1>
-						
 						</div>
 					) : null}
 					<h1>{minutes}</h1>
