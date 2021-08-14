@@ -1,6 +1,9 @@
 let DEFAULT_URL_PROFILE = 'http://165.22.31.74:4080/account/profile'
-let DEFAULT_URL_TEXT = 'http://165.22.31.74:4080/typing/text'
-let DEFAULT_URL_TESTING = 'http://165.22.31.74:4080/typing/text/complete'
+let DEFAULT_URL_TEXT = 'http://165.22.31.74:4080/api/v1/typing'    //text
+let DEFAULT_URL_TESTING = 'http://165.22.31.74:4080/api/v1/typing/complete'     //complete
+let DEFAULT_URL_TOP_USERS = 'http://165.22.31.74:4080/api/v1/typing/ratings' 
+let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/ratings/user' 
+    
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const CHANGE_TOKEN = 'CHANGE_TOKEN'
@@ -42,6 +45,29 @@ export const sendTestingRequest = ({speed, accuracy, fetchedId}) => (dispatch, g
 		.then((finish) => console.log(finish))
 }
 
+export const getTopRatingRequest = (token) => (dispatch) => {
+	fetch(DEFAULT_URL_TOP_USERS, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			id_token: token,
+		},
+	})
+		.then((response) => response.json())
+		.then((rating) => (rating))
+}
+export const getUserRatingRequest = (token) => (dispatch) => {
+	fetch(DEFAULT_URL_USER, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			id_token: token,
+		},
+	})
+		.then((response) => response.json())
+		.then((rating) => (rating))
+}
+
 export const text = (text, id) => ({
 	type: TEXT,
 	payload: text,
@@ -59,3 +85,4 @@ export const change_token = (token) => ({
 export const logOut = () => ({
 	type: LOGOUT,
 })
+

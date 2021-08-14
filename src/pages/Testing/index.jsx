@@ -26,6 +26,10 @@ function Testing() {
 	const [disabled, setDisabled] = useState(true)
 	const [speed, setSpeed] = useState(0)
 
+
+	const Refresh = () => {
+		console.log('Refresh')
+	}
 	//text
 	console.log(fetchedText)
 	console.log(fetchedId)
@@ -138,6 +142,7 @@ function Testing() {
 									height: 30,
 									cursor: 'pointer',
 								}}
+								onClick={() => {Refresh()}}
 							/>
 						</div>
 					</div>
