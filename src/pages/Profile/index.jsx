@@ -36,7 +36,7 @@ export const Profile = () => {
 								<h3 className='profile__speed-title'>
 									СКОРОСТЬ ПЕЧАТИ
 								</h3>
-								<h2 className='profile__speed'>123</h2>
+								<h2 className='profile__speed'>{state.speed}</h2>
 							</div>
 						</div>
 						<div className='profile__accuracy-wrapper'>
@@ -49,7 +49,7 @@ export const Profile = () => {
 								<h3 className='profile__speed-title'>
 									ТОЧНОСТЬ
 								</h3>
-								<h2 className='profile__speed'>95,5%</h2>
+								<h2 className='profile__speed'>{state.accuracy}</h2>
 							</div>
 						</div>
 
@@ -70,27 +70,11 @@ export const Profile = () => {
 						</div>
 						<div className='profile__rating-wrapper'>
 							<div>
-								<span>123</span>
+								<span>{state.speed}</span>
 								<div></div>
 							</div>
 							<div>
-								<span>95,5%</span>
-								<div></div>
-							</div>
-							<div className='profile__rating-date'>
-								<span>09 авг 21</span>
-								<div className='profile__rating-hour'>
-									09:28
-								</div>
-							</div>
-						</div>
-						<div className='profile__rating-wrapper'>
-							<div>
-								<span>123</span>
-								<div></div>
-							</div>
-							<div>
-								<span>95,5%</span>
+								<span>{state.accuracy}</span>
 								<div></div>
 							</div>
 							<div className='profile__rating-date'>
