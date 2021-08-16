@@ -6,8 +6,9 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 import pic1 from '../../assets/img/Google - Original.png'
-import pic2 from '../../assets/img/Rectangle 27.png'
+import pic2 from '../../assets/img/new.png'
 import pic3 from '../../assets/img/Group 22.png'
+import pic4 from '../../assets/img/Union.png'
 
 import './style.scss'
 import { useSelector } from 'react-redux'
@@ -55,16 +56,19 @@ function SignUp() {
 							style={{
 								display: 'flex',
 								justifyContent: 'space-between',
+								width: 160,
+								paddingLeft:7 ,
+								
+								
 							}}
 						>
-							<h1 className='block__first__one__title'>TezTer</h1>
-							{/* <div>burger</div> */}
+							<img src={pic4} style={{width:29,height:29,}}/>
+							<h1 className='block__first__one__title'><span style={{fontWeight:700}}>TEZ</span>TER</h1>
 						</div>
 						<div className='block__first__two'>
 							<h1 className='block__first__title'>
 								Научиться печатать вслепую
 							</h1>
-							<img src={pic3} className='planeta' />
 							<button
 								className='block__button'
 								onClick={authorization}
@@ -79,7 +83,7 @@ function SignUp() {
 							</button>
 						</div>
 					</div>
-					<img src={pic2} className='block__img' />
+					<img src={pic2}  />
 				</div>
 			</div>
 		</div>

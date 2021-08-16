@@ -5,6 +5,8 @@ import { getRatingRequest } from "../../store/actions";
 import moment from 'moment'
 import pic1 from "../../assets/img/skorost.png";
 import pic2 from "../../assets/img/tochnost.png";
+import pic3 from '../../assets/img/star.png'
+import pic4 from '../../assets/img/date.png'
 import "./Rating.scss";
 
 function Rating() {
@@ -51,17 +53,31 @@ function Rating() {
                 />
                 ТОЧНОСТЬ, %
               </span>
+               <span className="rating-block__two__title1">
+                {" "}
+                <img
+                  src={pic3}
+                  style={{ width: 16, height: 16, marginRight: 10 }}
+                />
+                ОЧКИ
+              </span>  
+              <span className="rating-block__two__title1">
+                {" "}
+                <img
+                  src={pic4}
+                  style={{ width: 16, height: 16, marginRight: 10 }}
+                />
+               ДАТА
+              </span>
             </div>
-            <div >
+            <div style={{borderTop:' 1px solid #DADADA' , width:1000}} >
             {rating.map((el,id) => {
               return <div  className="rating__rating-block" key={id}> 
-              <div style={{display:'flex',alignItems:'center'}}> <img src={el.rating.user.thumbnail} style={{width:50 , height:50,marginRight:10}}/>{el.rating.user.fullName}</div>
-              <div>{el.rating.speed} </div>
+              <div style={{display:'flex',alignItems:'center'}}> <img src={el.rating.user.thumbnail} style={{width:50 , height:50,marginRight:10,borderRadius:50}}/>{el.rating.user.fullName}</div>
+              <div>{el.rating.speed}</div>
               <div>{el.rating.accuracy}%</div>
+              <div>{Math.round(el.rating.score)}</div>
               <div>{moment(el.rating.date).format('lll')}</div>
-             
-             
-              
               </div>
             })}
            
