@@ -58,7 +58,7 @@ function SignUp() {
 							}}
 						>
 							<h1 className='block__first__one__title'>TezTer</h1>
-							<div>burger</div>
+							{/* <div>burger</div> */}
 						</div>
 						<div className='block__first__two'>
 							<h1 className='block__first__title'>

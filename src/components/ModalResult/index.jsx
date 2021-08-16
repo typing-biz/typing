@@ -8,8 +8,8 @@ function ModalResult({speed , accuracy}){
 			<section className='modal'>
 				<div className='modal__wrapper'>
 					<h1 className='modal__title'>Финиш</h1>
-                    <h2>Скорость : {speed} {""}зн/мин</h2>
-                    <h2>Точность :   {accuracy}%</h2>
+                    <h2 style={{padding:10}}>Скорость : {speed} {""}зн/мин</h2>
+                    <h2 style={{padding:10}}>Точность :   {accuracy}%</h2>
 					<Link to="/">
 						<button className='modal__btn' >Ok</button>
 					</Link>

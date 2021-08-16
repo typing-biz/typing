@@ -136,11 +136,12 @@ function Testing() {
                     background:
                       id === index
                         ? wrongStep
-                          ? "green"
-                          : "red"
+                          ? '#90EE90'
+                          : "#F08080"
                         : "white" && id < index
-                        ? "yellow"
+                        ? "#90EE90"
                         : "white",
+                      
                   }}
                   key={id}
                 >
