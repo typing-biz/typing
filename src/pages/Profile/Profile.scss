@@ -14,7 +14,9 @@
 	}
 
 	&__rating-block {
-		width: 60%;
+		width: 62.5%;
+		// overflow: scroll;
+		// height: 1000px;
 	}
 
 	&__wrapper {
@@ -90,9 +92,9 @@
 	}
 	&__rating-wrapper {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 2.1fr 1fr 1.1fr;
 		align-items: center;
-		width: 680px;
+		width: 700px;
 		height: 60px;
 		margin: 0;
 		align-items: center;

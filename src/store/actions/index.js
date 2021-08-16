@@ -72,8 +72,8 @@ export const getRatingUserRequest = (token) => (dispatch) => {
 		},
 	})
 		.then((response) => response.json())
-		.then((history) => console.log(history)) 
-		.catch((error) => console.log(error) )
+		.then((history) => dispatch(getUSerRatins(history))) 
+		
 }
 
 
