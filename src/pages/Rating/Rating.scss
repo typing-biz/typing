@@ -5,7 +5,7 @@
 
   .rating {
     height: 600px;
-    width: 1000px;
+    width: 1110px;
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -16,7 +16,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 770px;
+      width: 880px;
       margin-left: 100px;
       margin-top: 35px;
       padding-left: 10px;
@@ -53,7 +53,7 @@
         width: 450px;
         margin-right: 0px;
         padding-top: 30px;
-		margin-left: 400px;
+	    	margin-left: 400px;
 
         .rating-block__two__title1 {
           font-family: Montserrat;
@@ -70,7 +70,7 @@
     .rating__rating-block {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr  ;
-      width: 800px;
+      width: 875px;
       height: 50px;
       margin: 0;
       align-items: center;
