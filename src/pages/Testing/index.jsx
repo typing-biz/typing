@@ -139,7 +139,7 @@ function Testing() {
                           ? '#90EE90'
                           : "#F08080"
                         : "white" && id < index
-                        ? "#90EE90"
+                        ? "yellow"
                         : "white",
                       
                   }}
@@ -152,7 +152,7 @@ function Testing() {
             <div className="refresh-block">
               {countdown > 0 && countdown < 6 && <Numbers>{countdown}</Numbers>}
 
-              <span
+              <div
                 onClick={() => checkRefresh()}
                 style={{
                   width: 30,
@@ -164,7 +164,7 @@ function Testing() {
                 }}
               >
                 <CachedIcon />
-              </span>
+              </div>
             </div>
           </div>
           <textarea

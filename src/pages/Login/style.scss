@@ -13,6 +13,7 @@
 		justify-content: space-between;
 		margin-top: 80px;
 		position: relative;
+		margin-left: 90px;
 		.planeta {
 			position: absolute;
 			top: 50%;
@@ -27,10 +28,12 @@
 			height: 29px;
 			font-family: 'Montserrat';
 			font-style: normal;
-			font-weight: bold;
-			font-size: 24px;
-			line-height: 29px;
+			font-weight: lighter;
+			font-size: 25px;
+			line-height: 30px;
 			color: #000000;
+			display: flex;
+			align-items: flex-end;
 		}
 
 		.block__first__title {
@@ -71,10 +74,6 @@
 		box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
 		transition: 0.5s ease-in-out;
 	}
-	.block__img {
-		width: 480px;
-		height: 573px;
-		border-radius: 12px;
-	}
+	
 }
 

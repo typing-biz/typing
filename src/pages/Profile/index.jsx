@@ -8,7 +8,6 @@ import vector2 from "../../assets//img//Vector-2.png";
 import googleIcon from "../../assets/img/goog-icon.jpg";
 import gitIcon from "../../assets/img/git-icon.jpg";
 import linkIcon from "../../assets/img/link-icon.jpg";
-
 import moment from 'moment'
 
 export const Profile = () => {
@@ -63,7 +62,7 @@ export const Profile = () => {
               <p>ТОЧНОСТЬ, %</p>
               <p>ДАТА / ВРЕМЯ</p>
             </div>
-            <div  >
+            <div style={{overflowY:'scroll' , height:423, overflowX:0}} >
               {history.map((el, id) => {
                 return (
                   <div key={id} className="profile__rating-wrapper">
