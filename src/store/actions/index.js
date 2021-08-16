@@ -8,6 +8,8 @@ export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const TEXT = 'TEXT'
+export const RATING = 'RATING'
+export const USER_RATING= 'USER_RATING'
 
 export const loginRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_PROFILE, {
@@ -32,7 +34,8 @@ export const getTextRequest = (token) => (dispatch) => {
 		.then((response) => response.json())
 		.then((data) => dispatch(text(data.text, data.id)))
 }
-export const sendTestingRequest = ({speed, accuracy, fetchedId}) => (dispatch, getState) => {
+
+export const sendTestingRequest = ({speed, accuracy, Textid}) => (dispatch, getState) => {
 	const token = getState().authReducer.token
 	fetch(DEFAULT_URL_TESTING, {
 		method: 'POST',
@@ -40,12 +43,13 @@ export const sendTestingRequest = ({speed, accuracy, fetchedId}) => (dispatch, g
 			'Content-Type': 'application/json',
 			id_token: token,
 		},
+		body:JSON.stringify({speed,accuracy,Textid})
 	})
 		.then((response) => response.json())
-		.then((finish) => console.log(finish))
+		// .then((finish) => console.log(finish))
 }
 
-export const getTopRatingRequest = (token) => (dispatch) => {
+export const getRatingRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_TOP_USERS, {
 		method: 'GET',
 		headers: {
@@ -54,9 +58,12 @@ export const getTopRatingRequest = (token) => (dispatch) => {
 		},
 	})
 		.then((response) => response.json())
-		.then((rating) => (rating))
+		.then((rating) => dispatch(getRating(rating)) )
 }
-export const getUserRatingRequest = (token) => (dispatch) => {
+
+
+
+export const getRatingUserRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_USER, {
 		method: 'GET',
 		headers: {
@@ -65,8 +72,10 @@ export const getUserRatingRequest = (token) => (dispatch) => {
 		},
 	})
 		.then((response) => response.json())
-		.then((rating) => (rating))
+		.then((history) => console.log(history)) 
+		.catch((error) => console.log(error) )
 }
+
 
 export const text = (text, id) => ({
 	type: TEXT,
@@ -86,3 +95,14 @@ export const logOut = () => ({
 	type: LOGOUT,
 })
 
+export const getRating  = (rating) => ({
+	type:RATING,
+	payload:rating,
+
+})
+
+export const getUSerRatins = (history) => ({
+	type:USER_RATING,
+	payload:history,
+
+})

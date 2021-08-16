@@ -1,8 +1,9 @@
 .testin-block {
-	position: relative;
-	background-repeat: repeat-y;
-	background-size: cover;
-	height: 100vh;
+	// position: relative;
+	background-repeat:no-repeat;
+	background-size:cover;
+	height: 90vh;
+	width: 100%;
 	background: #fafafa;
 	padding: 100px;
 	background-size: contain;
@@ -12,6 +13,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-left: 170px;
 	}
 
 	.testing-block__body {
@@ -31,13 +33,17 @@
 	.testing-block__area {
 		position: absolute;
 		font-size: x-large;
+		// z-index: 90;
+		
 
 		top: 0;
 		left: 0;
 		right: 0;
 		height: 100%;
 		width: 100%;
+		// width: 100px;
 		opacity: 0;
+	
 	}
 	.countDown {
 		position: absolute;

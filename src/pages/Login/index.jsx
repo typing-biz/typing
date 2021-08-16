@@ -26,8 +26,10 @@ const auth = firebase.auth()
 
 function SignUp() {
 	const dispatch = useDispatch()
-	const isAuth = useSelector((state) => state.authReducer.token)
-	if (false) return <Redirect to='/' />
+
+	const isAuth = useSelector((state) => state.authReducer.user.isAuth)
+
+	if (isAuth) return <Redirect to='/' />
 	const authorization = async () => {
 		const user = await auth.signInWithPopup(
 			new firebase.auth.GoogleAuthProvider(),
@@ -38,6 +40,8 @@ function SignUp() {
 			.then((idTokenResult) => {
 				dispatch(change_token(idTokenResult.token))
 				dispatch(loginRequest(idTokenResult.token))
+				localStorage.setItem('token' , JSON.stringify(idTokenResult.token))
+				console.log(idTokenResult.token)
 			})
 	}
 
