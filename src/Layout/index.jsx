@@ -7,10 +7,11 @@ import SignUp from '../pages/Login'
 import Routes from '../routes'
 function Layout() {
 	const user = useSelector((state) => state.authReducer.token)
-	console.log(user)
+	const isAuth = useSelector((state) => state.authReducer.user.isAuth)
+	// console.log(user)
 	return (
 		<>
-			{true ? (
+			{isAuth ? (
 				<div>
 				<Header />
 					<Routes />
@@ -19,9 +20,10 @@ function Layout() {
 			) : (
 				<div>
 					<Routes />
-					<Redirect to='/signUp' />
+					<Redirect exact  to='/signUp' />
 				</div>
 			)}
+			
 		</>
 	)
 }

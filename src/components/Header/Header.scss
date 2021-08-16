@@ -17,11 +17,8 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 26px;
     line-height: 22px;
-	
-
-
     color: #000000;
   }
   .link {
@@ -133,6 +130,7 @@ a {
     grid-template-columns: 1fr;
     max-width: 300px;
   }
+
   .list-item {
     &:hover {
       .drop-menu li {

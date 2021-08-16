@@ -1,6 +1,6 @@
 .rating-block {
   background-image: url(../../assets/img/rating.png);
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: cover;
 
   .rating {
@@ -69,14 +69,14 @@
 
     .rating__rating-block {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 770px;
+      grid-template-columns: 2fr 1fr 1fr 1fr  ;
+      width: 800px;
       height: 50px;
       margin: 0;
       align-items: center;
       margin-right: 0;
       margin-top: 50px;
-      margin-left: 110px;
+      // margin-left: 110px;
       background: rgba(255, 100, 100, 0.2);
       border: 1px solid #eaeaea;
       box-sizing: border-box;

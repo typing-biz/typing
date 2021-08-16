@@ -1,11 +1,25 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch } from "react-redux";
+ import {useEffect }from 'react'
 import pic1 from "../../assets/img/skorost.png";
 import pic2 from "../../assets/img/tochnost.png";
 import "./Rating.scss";
+import { getRatingRequest } from "../../store/actions";
 
 function Rating() {
-  const rating = useSelector((state) => state.authReducer.user);
+  const user = useSelector((state) => state.authReducer.user)
+  const rating = useSelector((state) => state.ratingReducer.rating);
+  const dispatch = useDispatch()
+  // const speedResponse = ratingResponse.speed;
+  // const accuracyResponse = ratingResponse.accuracy;
+  // const dateResponse = ratingResponse.date;
+  
+
+  console.log(rating)
+  useEffect(() => {
+    dispatch(getRatingRequest())
+
+  }, []);
 
   return (
     <div className="rating-block">
@@ -36,12 +50,20 @@ function Rating() {
                 ТОЧНОСТЬ, %
               </span>
             </div>
+            <div >
+            {rating.map((el,id) => {
+              return <div  className="rating__rating-block" key={id}> 
+              <div style={{display:'flex',alignItems:'center'}}> <img src={el.rating.user.thumbnail} style={{width:50 , height:50}}/>{el.rating.user.fullName}</div>
+              <div>{el.rating.speed} </div>
+              <div>{el.rating.accuracy}%</div>
+              <div>{el.rating.date}</div>
+              {/* moment().format('lll');  */}
+              </div>
+            })}
+           
           </div>
-          <div className="rating__rating-block">
-            <div> 1 . Isaeva Jasmina</div>
-            <div>600</div>
-            <div>96.1%</div>
           </div>
+         
         </div>
       </div>
     </div>
