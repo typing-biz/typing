@@ -1,23 +1,27 @@
 import React from "react";
 import "./Profile.scss";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getRatingUserRequest } from "../../store/actions";
 import vector1 from "../../assets//img//Vector.png";
 import vector2 from "../../assets//img//Vector-2.png";
 import googleIcon from "../../assets/img/goog-icon.jpg";
 import gitIcon from "../../assets/img/git-icon.jpg";
 import linkIcon from "../../assets/img/link-icon.jpg";
-import { useEffect } from "react";
-import {getRatingUserRequest } from "../../store/actions";
+
+import moment from 'moment'
 
 export const Profile = () => {
   const state = useSelector((state) => state.authReducer.user);
-  
-//   console.log(state);
+  const token = useSelector((state) => state.authReducer.token);
+  const history = useSelector((state) => state.ratingReducer.history);
+
+  console.log(history);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRatingUserRequest());
+    dispatch(getRatingUserRequest(token));
   }, []);
   return (
     <div className="profile">
@@ -59,7 +63,27 @@ export const Profile = () => {
               <p>ТОЧНОСТЬ, %</p>
               <p>ДАТА / ВРЕМЯ</p>
             </div>
-            <div className="profile__rating-wrapper">
+            <div  >
+              {history.map((el, id) => {
+                return (
+                  <div key={id} className="profile__rating-wrapper">
+                    <div>
+                      <span>{el.speed}</span>
+                      <div></div>
+                    </div>
+                    <div>
+                      <span>{el.accuracy} %</span>
+                      <div></div>
+                    </div>
+                    <div className="profile__rating-date">
+                      <span>{moment(el.date).format('lll')}</span>
+                     
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {/* <div className="profile__rating-wrapper">
               <div>
                 <span>123</span>
                 <div></div>
@@ -72,21 +96,7 @@ export const Profile = () => {
                 <span>09 авг 21</span>
                 <div className="profile__rating-hour">09:28</div>
               </div>
-            </div>
-            <div className="profile__rating-wrapper">
-              <div>
-                <span>123</span>
-                <div></div>
-              </div>
-              <div>
-                <span>95,5%</span>
-                <div></div>
-              </div>
-              <div className="profile__rating-date">
-                <span>09 авг 21</span>
-                <div className="profile__rating-hour">09:28</div>
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ function Rating() {
   // const dateResponse = ratingResponse.date;
   
 
-  console.log(rating)
+  // console.log(rating)
   useEffect(() => {
     dispatch(getRatingRequest())
 

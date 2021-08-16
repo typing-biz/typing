@@ -5,6 +5,7 @@ import {RATING , USER_RATING} from '../actions'
 
 const initialState =  {
 	rating:[],
+	history:[]
 }
 
 export const ratingReducer = (state =  initialState, action) => {
@@ -16,6 +17,11 @@ export const ratingReducer = (state =  initialState, action) => {
 			...state,
 			rating:action.payload,
 		}
+		case USER_RATING:
+			return{
+				...state,
+				history:action.payload
+			}
 
 		default:
 			return state
