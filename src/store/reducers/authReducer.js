@@ -40,7 +40,7 @@ export const authReducer = (state = initialState, action) => {
           thumbnail: "",
           fullName: "",
           email: "",
-		  isAuth: false,
+	    	  isAuth: false,
         },
         token: "",
         text: "",
