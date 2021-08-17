@@ -159,7 +159,6 @@ function Testing() {
                   height: 30,
                   cursor: "pointer",
                   position: "relative",
-                  zIndex: 101,
                   top: -50,
                 }}
               >
