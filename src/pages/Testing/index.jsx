@@ -158,9 +158,11 @@ function Testing() {
                   width: 30,
                   height: 30,
                   cursor: "pointer",
-                  position: "relative",
-                  top: -50,
+                  position: "absolute",
+                  top:-50,
+                 
                 }}
+                className="refresh_btn"
               >
                 <CachedIcon />
               </div>

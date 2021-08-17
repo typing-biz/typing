@@ -5,21 +5,21 @@
 	height: 90vh;
 	width: 100%;
 	background: #fafafa;
-	padding: 100px;
+	padding-top: 140px;
 	background-size: contain;
 	background-image: url(../../assets/img/img1.png);
-	// overflow-y:unset;
+	
 
 	.testing__main {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 170px;
+		margin-left: 100px;
 	}
 
 	.testing-block__body {
 		width: 770px;
-		height: 334px;
+		height: 380px;
 		left: 191px;
 		top: 180px;
 
@@ -32,17 +32,17 @@
 		word-spacing: 3px;
 	}
 	.testing-block__area {
-		position: absolute;
+		position:absolute;
 		font-size: x-large;
 		// z-index: 90;
-		z-index: -1;
+		// z-index: 100;
 		
 
-		top: 0;
+		top: 100;
 		left: 0;
 		right: 0;
-		height: 100%;
-		width: 100%;
+		height: 90%;
+		width: 70%;
 		// width: 100px;
 		opacity: 0;
 	
