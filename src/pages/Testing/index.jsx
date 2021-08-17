@@ -7,8 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   getTextRequest,
   sendTestingRequest,
-  getRatingRequest,
-  getRatingUserRequest,
 } from "../../store/actions";
 import ModalResult from "../../components/ModalResult";
 import "./style.scss";
@@ -33,30 +31,14 @@ function Testing() {
   const [speed, setSpeed] = useState(0);
   const [allSeconds, setAllSeconds] = useState();
 
-  //text
-  // console.log(fetchedText)
-  // console.log(fetchedId)
+
 
   let textArray = fetchedText ? fetchedText.split("") : [];
 
-  // useEffect(() => {
-  // 	setSpeed(Math.round(textArray.length / (6))
-  // 	// console.log('textArray.length is ', textArray.length)
-  // 	// console.log('minutes is ', minutes + seconds / 60)
-  // 	// setSpeed(index)
-  // 	// setDisabled(false)
-  // }, [seconds])
 
   useEffect(() => {
     localStorage.setItem("params", JSON.stringify({ speed, accuracy, Textid }));
   }, [finish]);
-
-  // useEffect(() => {
-  // 	setTimeout(() => {
-  // 		setStart(true)
-  // 		setSeconds(1)
-  // 	}, 5000)
-  // }, [])
 
   useEffect(() => {
     dispatch(getTextRequest());
@@ -139,7 +121,7 @@ function Testing() {
                           ? '#90EE90'
                           : "#F08080"
                         : "white" && id < index
-                        ? "yellow"
+                        ? "#ffff7a"
                         : "white",
                       
                   }}
@@ -180,6 +162,7 @@ function Testing() {
             <ModalResult
               speed={speed}
               accuracy={accuracy === 100 ? 100 : accuracy.toFixed(1)}
+            
             />
           )}
 
