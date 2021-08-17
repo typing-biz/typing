@@ -41,7 +41,7 @@ function Rating() {
               <span className="rating-block__two__title1">
                 <img
                   src={pic1}
-                  style={{ width: 16, height: 16, marginRight: 10 }}
+                 
                 />
                 СКОРОСТЬ, ЗН./МИН
               </span>
@@ -49,7 +49,7 @@ function Rating() {
                 {" "}
                 <img
                   src={pic2}
-                  style={{ width: 16, height: 16, marginRight: 10 }}
+                 
                 />
                 ТОЧНОСТЬ, %
               </span>
@@ -57,7 +57,7 @@ function Rating() {
                 {" "}
                 <img
                   src={pic3}
-                  style={{ width: 16, height: 16, marginRight: 10 }}
+                
                 />
                 ОЧКИ
               </span>  
@@ -65,7 +65,7 @@ function Rating() {
                 {" "}
                 <img
                   src={pic4}
-                  style={{ width: 16, height: 16, marginRight: 10 }}
+                
                 />
                ДАТА
               </span>

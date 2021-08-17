@@ -4,15 +4,15 @@
   background-color: #ffffff;
   position: relative;
   z-index: 2;
-  background-image: url(../../assets/img/rating.png);
+  background-image: url(../../assets/img/new1.png);
   display: flex;
- 
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &__logo {
     font-family: Montserrat;
     font-style: normal;
@@ -42,21 +42,21 @@
     color: #000000;
   }
   &__btn-login {
-  	background: #ff9000;
-  	width: 140px;
-  	height: 25px;
-  	font-family: Montserrat;
-  	font-style: normal;
-  	font-weight: 500;
-  	font-size: 12px;
-  	line-height: 15px;
-  	color: #ffffff;
-  	border: none;
+    background: #ff9000;
+    width: 140px;
+    height: 25px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+    border: none;
   }
 
   &__modal {
-  	width: 600px;
-  	height: 350px;
+    width: 600px;
+    height: 350px;
   }
   .header__block__profile {
     display: flex;
@@ -101,10 +101,8 @@ $aqua: #55dde0;
 $lightPurple: #9966cc;
 $tealBLue: #33658a;
 $linear: linear-gradient(90deg, #3f4593, #5960bd);
-
-/*Font*/
 $mainFont: "Roboto", sans-serif;
-/* Reset*/
+
 *,
 *::before,
 *::after {
@@ -122,7 +120,6 @@ a {
   color: inherit;
 }
 
-/* Start Style*/
 .main__menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -209,11 +206,11 @@ a {
 }
 
 .p.clip {
-  white-space: nowrap; /* Запрещаем перенос строк */
-  overflow: hidden; /* Обрезаем все, что не помещается в область */
-  background: #fc0; /* Цвет фона */
-  padding: 5px; /* Поля вокруг текста */
-  text-overflow: ellipsis; /* Добавляем многоточие */
+  white-space: nowrap;
+  overflow: hidden;
+  background: #fc0;
+  padding: 5px;
+  text-overflow: ellipsis;
 }
 
 @keyframes leftToRight {
