@@ -25,12 +25,8 @@ const useStyles = makeStyles((theme) =>
 )
 
 function Rating() {
-	const user = useSelector((state) => state.authReducer.user)
+	// const user = useSelector((state) => state.authReducer.user)
 	const rating = useSelector((state) => state.ratingReducer.rating)
-	
-	
-	
-
 	const pageIndex = useSelector((state) => state.ratingReducer.pageIndex)
 	const pageSize = useSelector((state) => state.ratingReducer.pageSize)
 	const totalCount = useSelector((state) => state.ratingReducer.totalCount)
@@ -118,7 +114,6 @@ function Rating() {
 						</div>
 					</div>
 				</div>
-
 				<div className={classes.root}>
 					<Pagination count={5} />
 				</div>

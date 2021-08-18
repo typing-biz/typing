@@ -5,8 +5,8 @@ const local = JSON.parse(localStorage.getItem('user'))
 const initialState = local || {
 	user: {
 		thumbnail: '',
-		fullName: 'user user',
-		email: 'aza12@gmail.com',
+		fullName: '',
+		email: '',
 		isAuth: false,
 	},
 	token: '',
@@ -51,8 +51,6 @@ export const authReducer = (state = initialState, action) => {
 				text: action.payload,
 				id: action.id,
 			}
-	
-
 		default:
 			return state
 	}

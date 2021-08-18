@@ -163,10 +163,8 @@ function Testing() {
             <ModalResult
               speed={speed}
               accuracy={accuracy === 100 ? 100 : accuracy.toFixed(1)}
-            
             />
           )}
-
           <h1>{minutes}:</h1>
           <h1>{seconds}</h1>
         </div>

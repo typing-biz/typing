@@ -1,10 +1,10 @@
 import React from "react";
-import instagram from "../../assets/img/insta.png";
-import face from "../../assets/img/face.png";
-import github from "../../assets/img/github.png";
-import telega from "../../assets/img/telega.png";
-import whats from "../../assets/img/whats.png";
-import visa from "../../assets/img/visa.png";
+import instagram from "../../assets/img/insta-footer.jpg";
+import face from "../../assets/img/face-footer.jpg";
+import github from "../../assets/img/git-footer.jpg";
+import telega from "../../assets/img/telegram-footer.jpg";
+import whats from "../../assets/img/whats-footer.jpg";
+import yutub from "../../assets/img/yutub-footer.jpg";
 import "./Footer.scss";
 
 function Footer() {
@@ -20,16 +20,16 @@ function Footer() {
           </div>
 
           <div className="footer-two">
-            <a href="https://www.instagram.com/tezter.kg/?hl=ru">
+            {/* <a href="https://www.instagram.com/tezter.kg/?hl=ru">
               <img src={instagram} />
-            </a>
+            </a> */}
             <a href="https://www.facebook.com/">
               {" "}
               <img src={face} />
             </a>
             <a href="https://www.youtube.com/">
               {" "}
-              <img src={visa} />
+              <img src={yutub} />
             </a>
             <a href="https://github.com/jasminaisaeva">
               {" "}

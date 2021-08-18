@@ -1,13 +1,10 @@
-import { ContactsOutlined } from "@material-ui/icons"
-
 let DEFAULT_URL_PROFILE = 'http://165.22.31.74:4080/account/profile'
 let DEFAULT_URL_TEXT = 'http://165.22.31.74:4080/api/v1/typing' //text
 let DEFAULT_URL_TESTING = 'http://165.22.31.74:4080/api/v1/typing/complete' //complete
 let DEFAULT_URL_TOP_USERS_ONE = 'http://165.22.31.74:4080/api/v1/typing/ratings'
-let DEFAULT_URL_TOP_USERS_TWO =
-	'http://165.22.31.74:4080/api/v1/typing/ratings?pageIndex=2&pageSize=5'
 let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/ratings/user'
-let DEFAULT_URL_USER__RECORD = 'http://165.22.31.74:4080/api/v1/typing/user/record'
+let DEFAULT_URL_USER__RECORD =
+	'http://165.22.31.74:4080/api/v1/typing/user/record'
 
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
@@ -16,7 +13,7 @@ export const TEXT = 'TEXT'
 export const RATING = 'RATING'
 export const USER_RATING = 'USER_RATING'
 export const SET_PAGE_INDEX = 'SET_PAGE_INDEX'
-
+export const USER_RECORD = 'USER_RECORD'
 
 export const loginRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_PROFILE, {
@@ -69,8 +66,8 @@ export const getRatingRequest =
 			},
 		})
 			.then((response) => response.json())
-			.then((pageIndex, pageSize, totalCount,rating) =>
-				dispatch(getRating(pageIndex, pageSize, totalCount,rating)),
+			.then((pageIndex, pageSize, totalCount, rating) =>
+				dispatch(getRating(pageIndex, pageSize, totalCount, rating)),
 			)
 	}
 
@@ -84,6 +81,18 @@ export const getRatingUserRequest = (token) => (dispatch) => {
 	})
 		.then((response) => response.json())
 		.then((history) => dispatch(getUSerRatins(history)))
+}
+
+export const getRecordUserRequest = (token) => (dispatch) => {
+	fetch(DEFAULT_URL_USER__RECORD, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			id_token: token,
+		},
+	})
+		.then((response) => response.json())
+		.then((record) => dispatch(get_record(record)))
 }
 
 export const text = (text, id) => ({
@@ -104,9 +113,9 @@ export const logOut = () => ({
 	type: LOGOUT,
 })
 
-export const getRating = (rating,pageIndex, pageSize, totalCount) => ({
+export const getRating = (rating, pageIndex, pageSize, totalCount) => ({
 	type: RATING,
-	payload:rating,
+	payload: rating,
 	pageIndex,
 	pageSize,
 	totalCount,
@@ -117,7 +126,7 @@ export const getUSerRatins = (history) => ({
 	payload: history,
 })
 
-export const setPageIndex = (page) => ({
-	type: SET_PAGE_INDEX,
-	payload: page,
+export const get_record = (record) => ({
+	type: USER_RECORD,
+	payload: record,
 })

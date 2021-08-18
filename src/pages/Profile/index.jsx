@@ -15,9 +15,15 @@ export const Profile = () => {
   const token = useSelector((state) => state.authReducer.token);
   const history = useSelector((state) => state.ratingReducer.history);
   const record = useSelector((state) => state.ratingReducer.record)
-
+  
+  // const record = useSelector((state) => state.ratingReducer.record)
 
   console.log(history);
+  console.log(record)
+
+  useEffect(() => {
+    dispatch(getRecordUserRequest(token))
+  }, []);
 
   const dispatch = useDispatch();
 
