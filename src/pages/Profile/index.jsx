@@ -49,7 +49,7 @@ export const Profile = () => {
               <img src={vector2} className="profile__icon-1" alt="" />
               <div>
                 <h3 className="profile__speed-title">ТОЧНОСТЬ</h3>
-                <h2 className="profile__speed">{record.accuracy}%</h2>
+                <h2 className="profile__speed">{Math.round(record.accuracy)}%</h2>
               </div>
             </div>
 
@@ -68,7 +68,7 @@ export const Profile = () => {
               <p>ТОЧНОСТЬ, %</p>
               <p>ДАТА / ВРЕМЯ</p>
             </div>
-            <div  style={{overflowY:'scroll' , height:423, overflowX:0}} >
+            <div  style={{overflowY:'hidden' , height:423, overflowX:0}} >
               {history.map((el, id) => {
                 return (
                   <div key={id} className="profile__rating-wrapper">
