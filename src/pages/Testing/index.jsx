@@ -13,7 +13,8 @@ import "./style.scss";
 
 function Testing() {
   const fetchedText = useSelector((state) => state.authReducer.text);
-  const Textid = useSelector((state) => state.authReducer.id);
+  const typingTextId = useSelector((state) => state.authReducer.id);
+  const token = useSelector((state) => state.authReducer.token)
 
   const dispatch = useDispatch();
 
@@ -37,11 +38,11 @@ function Testing() {
 
 
   useEffect(() => {
-    localStorage.setItem("params", JSON.stringify({ speed, accuracy, Textid }));
+    localStorage.setItem("params", JSON.stringify({ speed, accuracy, typingTextId }));
   }, [finish]);
 
   useEffect(() => {
-    dispatch(getTextRequest());
+    dispatch(getTextRequest(token));
   }, []);
 
   useEffect(() => {
@@ -89,7 +90,7 @@ function Testing() {
     if (index + 1 === textArray.length) {
       clearTimeout(timer);
       setFinish(true);
-      dispatch(sendTestingRequest({ speed, accuracy, Textid }));
+      dispatch(sendTestingRequest({ speed, accuracy, typingTextId }));
     }
   }
 

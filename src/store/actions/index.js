@@ -35,7 +35,7 @@ export const getTextRequest = (token) => (dispatch) => {
 		.then((data) => dispatch(text(data.text, data.id)))
 }
 
-export const sendTestingRequest = ({speed, accuracy, Textid}) => (dispatch, getState) => {
+export const sendTestingRequest = ({speed, accuracy, typingTextId}) => (dispatch, getState) => {
 	const token = getState().authReducer.token
 	fetch(DEFAULT_URL_TESTING, {
 		method: 'POST',
@@ -43,7 +43,7 @@ export const sendTestingRequest = ({speed, accuracy, Textid}) => (dispatch, getS
 			'Content-Type': 'application/json',
 			id_token: token,
 		},
-		body:JSON.stringify({speed,accuracy,Textid})
+		body:JSON.stringify({speed,accuracy,typingTextId})
 	})
 		.then((response) => response.json())
 		// .then((finish) => console.log(finish))
