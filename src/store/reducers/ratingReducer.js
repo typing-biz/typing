@@ -1,11 +1,12 @@
 
-import {RATING , USER_RATING} from '../actions'
+import {RATING , USER_RATING,USER_RECORD} from '../actions'
 
 // const local = JSON.parse(localStorage.getItem('user'))
 
 const initialState =  {
 	rating:[],
-	history:[]
+	history:[],
+	record : ""
 }
 
 export const ratingReducer = (state =  initialState, action) => {
@@ -22,6 +23,13 @@ export const ratingReducer = (state =  initialState, action) => {
 				...state,
 				history:action.payload
 			}
+
+			case USER_RECORD:
+			return{
+					...state,
+					record:action.payload
+
+				}
 
 		default:
 			return state

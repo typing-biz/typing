@@ -2,7 +2,7 @@ import React from "react";
 import "./Profile.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getRatingUserRequest } from "../../store/actions";
+import { getRatingUserRequest , getRecordUserRequest } from "../../store/actions";
 import vector1 from "../../assets//img//Vector.png";
 import vector2 from "../../assets//img//Vector-2.png";
 import googleIcon from "../../assets/img/goog-icon.jpg";
@@ -14,14 +14,19 @@ export const Profile = () => {
   const state = useSelector((state) => state.authReducer.user);
   const token = useSelector((state) => state.authReducer.token);
   const history = useSelector((state) => state.ratingReducer.history);
+  const record = useSelector((state) => state.ratingReducer.record)
 
-  console.log(history);
+ 
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getRatingUserRequest(token));
   }, []);
+
+  useEffect(() => {
+    dispatch(getRecordUserRequest(token))
+  })
   return (
     <div className="profile">
       <div className="container">
@@ -36,14 +41,14 @@ export const Profile = () => {
 
               <div>
                 <h3 className="profile__speed-title">СКОРОСТЬ ПЕЧАТИ</h3>
-                <h2 className="profile__speed">123</h2>
+                <h2 className="profile__speed">{record.speed}</h2>
               </div>
             </div>
             <div className="profile__accuracy-wrapper">
               <img src={vector2} className="profile__icon-1" alt="" />
               <div>
                 <h3 className="profile__speed-title">ТОЧНОСТЬ</h3>
-                <h2 className="profile__speed">95,5%</h2>
+                <h2 className="profile__speed">{record.accuracy}%</h2>
               </div>
             </div>
 

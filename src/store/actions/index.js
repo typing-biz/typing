@@ -1,8 +1,11 @@
+import { ContactsOutlined } from "@material-ui/icons"
+
 let DEFAULT_URL_PROFILE = 'http://165.22.31.74:4080/account/profile'
 let DEFAULT_URL_TEXT = 'http://165.22.31.74:4080/api/v1/typing'    //text
 let DEFAULT_URL_TESTING = 'http://165.22.31.74:4080/api/v1/typing/complete'     //complete
 let DEFAULT_URL_TOP_USERS = 'http://165.22.31.74:4080/api/v1/typing/ratings' 
 let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/ratings/user' 
+let DEFAULT_URL_USER__RECORD = 'http://165.22.31.74:4080/api/v1/typing/user/record' 
     
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
@@ -10,6 +13,7 @@ export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const TEXT = 'TEXT'
 export const RATING = 'RATING'
 export const USER_RATING= 'USER_RATING'
+export const USER_RECORD = 'USER_RECORD'
 
 export const loginRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_PROFILE, {
@@ -75,6 +79,25 @@ export const getRatingUserRequest = (token) => (dispatch) => {
 		.then((history) => dispatch(getUSerRatins(history))) 
 		
 }
+
+
+export const getRecordUserRequest = (token) => (dispatch) => {
+	fetch(DEFAULT_URL_USER__RECORD, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			id_token: token,
+		},
+	})
+		.then((response) => response.json())
+		.then((record) => dispatch(get_record(record)))
+		
+}
+
+export const get_record = (record) => ({
+	type:USER_RECORD , 
+	payload:record,
+})
 
 
 export const text = (text, id) => ({

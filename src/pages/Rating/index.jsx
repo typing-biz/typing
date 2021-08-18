@@ -13,13 +13,10 @@ function Rating() {
   const user = useSelector((state) => state.authReducer.user)
   const rating = useSelector((state) => state.ratingReducer.rating);
   const dispatch = useDispatch()
- 
-  // const speedResponse = ratingResponse.speed;
-  // const accuracyResponse = ratingResponse.accuracy;
-  // const dateResponse = ratingResponse.date;
+
   
 
-  // console.log(rating)
+ 
   useEffect(() => {
     dispatch(getRatingRequest())
 
