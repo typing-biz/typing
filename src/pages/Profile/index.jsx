@@ -24,9 +24,7 @@ export const Profile = () => {
     dispatch(getRatingUserRequest(token));
   }, []);
 
-  useEffect(() => {
-    dispatch(getRecordUserRequest(token))
-  })
+ 
   return (
     <div className="profile">
       <div className="container">
