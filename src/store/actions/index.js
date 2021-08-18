@@ -2,7 +2,7 @@ let DEFAULT_URL_PROFILE = 'http://165.22.31.74:4080/account/profile'
 let DEFAULT_URL_TEXT = 'http://165.22.31.74:4080/api/v1/typing'    //text
 let DEFAULT_URL_TESTING = 'http://165.22.31.74:4080/api/v1/typing/complete'     //complete
 let DEFAULT_URL_TOP_USERS = 'http://165.22.31.74:4080/api/v1/typing/ratings?pageIndex=1&pageSize=2' 
-let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/user/' 
+let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/ratings/user' 
     
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
@@ -36,7 +36,7 @@ export const getTextRequest = (token) => (dispatch) => {
 		.then((data) => dispatch(text(data.text, data.id)))
 }
 
-export const sendTestingRequest = ({speed, accuracy, Textid}) => (dispatch, getState) => {
+export const sendTestingRequest = ({speed, accuracy, typingTextId}) => (dispatch, getState) => {
 	const token = getState().authReducer.token
 	fetch(DEFAULT_URL_TESTING, {
 		method: 'POST',
@@ -44,7 +44,7 @@ export const sendTestingRequest = ({speed, accuracy, Textid}) => (dispatch, getS
 			'Content-Type': 'application/json',
 			id_token: token,
 		},
-		body:JSON.stringify({speed,accuracy,Textid})
+		body:JSON.stringify({speed,accuracy,typingTextId})
 	})
 		.then((response) => response.json())
 		// .then((finish) => console.log(finish))

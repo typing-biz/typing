@@ -12,15 +12,14 @@ function Header() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-
   return (
     <header className="header">
       <div className="container">
         <Link className="link" to="/">
           <div className="header__logo">
             {" "}
-            <img src={logo}  style={{borderRadius:'0%'}} />
-           <strong >Tez</strong>Ter
+            <img src={logo} style={{ borderRadius: "0%" }} />
+            <strong>Tez</strong>Ter
           </div>
         </Link>
 
@@ -30,12 +29,11 @@ function Header() {
           <div className="header__block__profile">
             <img
               src={user.thumbnail || ""}
-              
               onClick={() => history.push("/profile")}
             />
             <div className="header__block__profile__uName">
               {user.fullName || "user"}
-              <ul className="main__menu"  >
+              <ul className="main__menu">
                 <li className="list-item">
                   <a href="#" className="widget item--js">
                     <i className="ion ion-ios-partly-sunny-outline"></i>

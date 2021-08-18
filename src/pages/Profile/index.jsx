@@ -62,7 +62,7 @@ export const Profile = () => {
               <p>ТОЧНОСТЬ, %</p>
               <p>ДАТА / ВРЕМЯ</p>
             </div>
-            <div style={{overflowY:'scroll' , height:423, overflowX:0}} >
+            <div  style={{overflowY:'scroll' , height:423, overflowX:0}} >
               {history.map((el, id) => {
                 return (
                   <div key={id} className="profile__rating-wrapper">
@@ -82,20 +82,7 @@ export const Profile = () => {
                 );
               })}
             </div>
-            {/* <div className="profile__rating-wrapper">
-              <div>
-                <span>123</span>
-                <div></div>
-              </div>
-              <div>
-                <span>95,5%</span>
-                <div></div>
-              </div>
-              <div className="profile__rating-date">
-                <span>09 авг 21</span>
-                <div className="profile__rating-hour">09:28</div>
-              </div>
-            </div> */}
+            
           </div>
         </div>
       </div>
