@@ -15,6 +15,7 @@ export const Profile = () => {
   const token = useSelector((state) => state.authReducer.token);
   const history = useSelector((state) => state.ratingReducer.history);
 
+
   console.log(history);
 
   const dispatch = useDispatch();
@@ -71,7 +72,7 @@ export const Profile = () => {
                       <div></div>
                     </div>
                     <div>
-                      <span>{el.accuracy} %</span>
+                      <span>{Math.round(el.accuracy)} %</span>
                       <div></div>
                     </div>
                     <div className="profile__rating-date">
