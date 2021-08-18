@@ -1,15 +1,16 @@
 let DEFAULT_URL_PROFILE = 'http://165.22.31.74:4080/account/profile'
 let DEFAULT_URL_TEXT = 'http://165.22.31.74:4080/api/v1/typing'    //text
 let DEFAULT_URL_TESTING = 'http://165.22.31.74:4080/api/v1/typing/complete'     //complete
-let DEFAULT_URL_TOP_USERS = 'http://165.22.31.74:4080/api/v1/typing/ratings' 
-let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/ratings/user' 
+let DEFAULT_URL_TOP_USERS = 'http://165.22.31.74:4080/api/v1/typing/ratings?pageIndex=1&pageSize=2' 
+let DEFAULT_URL_USER = 'http://165.22.31.74:4080/api/v1/typing/user/' 
     
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const TEXT = 'TEXT'
 export const RATING = 'RATING'
-export const USER_RATING= 'USER_RATING'
+export const USER_RATING = 'USER_RATING'
+export const SET_PAGE_INDEX = 'SET_PAGE_INDEX'
 
 export const loginRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_PROFILE, {
@@ -58,7 +59,7 @@ export const getRatingRequest = (token) => (dispatch) => {
 		},
 	})
 		.then((response) => response.json())
-		.then((rating) => dispatch(getRating(rating)) )
+		.then((pageIndex, pageSize) => dispatch(getRating(pageIndex, pageSize)) )
 }
 
 
@@ -105,4 +106,8 @@ export const getUSerRatins = (history) => ({
 	type:USER_RATING,
 	payload:history,
 
+})
+export const setPageIndex = (page) => ({
+	type: SET_PAGE_INDEX,
+	payload: page,
 })

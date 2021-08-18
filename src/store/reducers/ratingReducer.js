@@ -1,11 +1,14 @@
 
-import {RATING , USER_RATING} from '../actions'
+import {RATING , SET_PAGE_INDEX, USER_RATING} from '../actions'
 
 // const local = JSON.parse(localStorage.getItem('user'))
 
 const initialState =  {
 	rating:[],
-	history:[]
+	history:[],
+	pageIndex: 1,
+	pageSize: 10,
+	totalCount: 0,
 }
 
 export const ratingReducer = (state =  initialState, action) => {
@@ -16,13 +19,18 @@ export const ratingReducer = (state =  initialState, action) => {
 		return {
 			...state,
 			rating:action.payload,
+			totalCount: action.payload
 		}
 		case USER_RATING:
 			return{
 				...state,
 				history:action.payload
 			}
-
+        case SET_PAGE_INDEX: 
+		    return{
+				...state,
+				pageIndex: action.payload
+			}
 		default:
 			return state
 	}
