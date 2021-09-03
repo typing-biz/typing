@@ -191,13 +191,14 @@ a {
           height: auto;
           font: 0 0 $mainFont;
           &.item--1 {
-            background: rgb(112, 70, 70);
+            background: rgb(13, 39, 189);
           }
           &.item--2 {
-            background: rgb(165, 40, 40);
+            background: rgb(238, 255, 0);
+            color: black;
           }
           &.item--3 {
-            background: rgb(83, 167, 15);
+            background: rgb(255, 0, 0);
           }
         }
       }
