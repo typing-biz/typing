@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.1216fd23.chunk.css",
+    "main.js": "/react-gh-pages/static/js/main.da81dbb0.chunk.js",
+    "main.js.map": "/react-gh-pages/static/js/main.da81dbb0.chunk.js.map",
+    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.0e673241.js",
+    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.0e673241.js.map",
+    "static/js/2.b62bd01d.chunk.js": "/react-gh-pages/static/js/2.b62bd01d.chunk.js",
+    "static/js/2.b62bd01d.chunk.js.map": "/react-gh-pages/static/js/2.b62bd01d.chunk.js.map",
+    "index.html": "/react-gh-pages/index.html",
+    "static/css/main.1216fd23.chunk.css.map": "/react-gh-pages/static/css/main.1216fd23.chunk.css.map",
+    "static/js/2.b62bd01d.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.b62bd01d.chunk.js.LICENSE.txt",
+    "static/media/Google - Original.960cccb6.png": "/react-gh-pages/static/media/Google - Original.960cccb6.png",
+    "static/media/Group 22.f2b4698b.png": "/react-gh-pages/static/media/Group 22.f2b4698b.png",
+    "static/media/Profile.scss": "/react-gh-pages/static/media/bg.6ca42703.png",
+    "static/media/Home.scss": "/react-gh-pages/static/media/home-new.fb34d0ff.png",
+    "static/media/new.78511f1c.png": "/react-gh-pages/static/media/new.78511f1c.png",
+    "static/media/style.scss": "/react-gh-pages/static/media/new1.c2a8519f.png",
+    "static/media/Rating.scss": "/react-gh-pages/static/media/rating.568f2639.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e673241.js",
+    "static/js/2.b62bd01d.chunk.js",
+    "static/css/main.1216fd23.chunk.css",
+    "static/js/main.da81dbb0.chunk.js"
+  ]
+}
