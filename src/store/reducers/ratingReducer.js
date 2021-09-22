@@ -1,15 +1,14 @@
-import { RATING, USER_RATING, USER_RECORD } from '../actions'
+import { RATING, USER_RATING, USER_RECORD,SET_ALL_USERS_COUNT } from '../actions'
 
 const initialState = {
 	rating: [],
-	pageIndex: 1,
-	pageSize: 1,
-	totalCount: 0,
 	history: [],
 	record: '',
+	all_users_count: null,
 }
 
 export const ratingReducer = (state = initialState, action) => {
+	console.log(action);
 	switch (action.type) {
 		case RATING:
 			return {
@@ -29,6 +28,11 @@ export const ratingReducer = (state = initialState, action) => {
 				...state,
 				record: action.payload,
 			}
+		case SET_ALL_USERS_COUNT: 
+		return {
+			...state,
+			all_users_count: action.payload
+		}
 		default:
 			return state
 	}

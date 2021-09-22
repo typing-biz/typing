@@ -7,7 +7,6 @@ import 'firebase/auth'
 
 import pic1 from '../../assets/img/Google - Original.png'
 import pic2 from '../../assets/img/new.png'
-import pic3 from '../../assets/img/Group 22.png'
 import pic4 from '../../assets/img/Union.png'
 
 import './style.scss'
@@ -28,7 +27,7 @@ const auth = firebase.auth()
 function SignUp() {
 	const dispatch = useDispatch()
 
-	const isAuth = useSelector((state) => state.authReducer.user.isAuth)
+	const isAuth = useSelector((state) => state.authReducer.isAuth)
 
 	if (isAuth) return <Redirect to='/' />
 	const authorization = async () => {
@@ -42,7 +41,6 @@ function SignUp() {
 				dispatch(change_token(idTokenResult.token))
 				dispatch(loginRequest(idTokenResult.token))
 				localStorage.setItem('token' , JSON.stringify(idTokenResult.token))
-				console.log(idTokenResult.token)
 			})
 	}
 

@@ -12,6 +12,7 @@ export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 export const TEXT = 'TEXT'
 export const RATING = 'RATING'
 export const USER_RATING = 'USER_RATING'
+export const SET_ALL_USERS_COUNT = 'SET_ALL_USERS_COUNT'
 export const SET_PAGE_INDEX = 'SET_PAGE_INDEX'
 export const USER_RECORD = 'USER_RECORD'
 
@@ -41,35 +42,47 @@ export const getTextRequest = (token) => (dispatch) => {
 
 export const sendTestingRequest =
 	({ speed, accuracy, typingTextId }) =>
-	(dispatch, getState) => {
-		const token = getState().authReducer.token
-		fetch(DEFAULT_URL_TESTING, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				id_token: token,
-			},
-			body: JSON.stringify({ speed, accuracy, typingTextId }),
-		}).then((response) => response.json())
-	}
+		(dispatch, getState) => {
+			const token = getState().authReducer.token
+			fetch(DEFAULT_URL_TESTING, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					id_token: token,
+				},
+				body: JSON.stringify({ speed, accuracy, typingTextId }),
+			}).then((response) => response.json())
+		}
 
 export const getRatingRequest =
-	({ token, pageSize, pageIndex }) =>
-	(dispatch, getState) => {
-		const url = `${DEFAULT_URL_TOP_USERS_ONE}?pageIndex=${pageIndex}&pageSize=${pageSize}`
+	({ pageIndex }) =>
+		(dispatch, getState) => {
+			const url = `${DEFAULT_URL_TOP_USERS_ONE}?pageIndex=${pageIndex}&pageSize=5`
+			const urlAllUsersCount = `${DEFAULT_URL_TOP_USERS_ONE}`
 
-		fetch(url, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-				id_token: getState().authReducer.token,
-			},
-		})
-			.then((response) => response.json())
-			.then((pageIndex, pageSize, totalCount, rating) =>
-				dispatch(getRating(pageIndex, pageSize, totalCount, rating)),
-			)
-	}
+			fetch(url, {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+					id_token: getState().authReducer.token,
+				},
+			})
+				.then((response) => response.json())
+				.then((rating) =>
+					dispatch(getRating(rating)),
+				)
+			fetch(urlAllUsersCount, {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+					id_token: getState().authReducer.token,
+				},
+			})
+				.then((response) => response.json())
+				.then((users) =>
+					dispatch(getAllUsersCount(users.length)),
+				)
+		}
 
 export const getRatingUserRequest = (token) => (dispatch) => {
 	fetch(DEFAULT_URL_USER, {
@@ -80,7 +93,7 @@ export const getRatingUserRequest = (token) => (dispatch) => {
 		},
 	})
 		.then((response) => response.json())
-		.then((history) => dispatch(getUSerRatins(history)))
+		.then((history) => dispatch(getUserRating(history)))
 }
 
 export const getRecordUserRequest = (token) => (dispatch) => {
@@ -113,15 +126,16 @@ export const logOut = () => ({
 	type: LOGOUT,
 })
 
-export const getRating = (rating, pageIndex, pageSize, totalCount) => ({
+export const getRating = (rating) => ({
 	type: RATING,
 	payload: rating,
-	pageIndex,
-	pageSize,
-	totalCount,
+})
+export const getAllUsersCount = (count) => ({
+	type: SET_ALL_USERS_COUNT,
+	payload: count,
 })
 
-export const getUSerRatins = (history) => ({
+export const getUserRating = (history) => ({
 	type: USER_RATING,
 	payload: history,
 })

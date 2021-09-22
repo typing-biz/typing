@@ -3,29 +3,20 @@ import { CHANGE_TOKEN, LOGIN, LOGOUT, TEXT } from '../actions'
 const local = JSON.parse(localStorage.getItem('user'))
 
 const initialState = local || {
-	user: {
-		thumbnail: '',
-		fullName: '',
-		email: '',
-		isAuth: false,
-	},
+	user: null,
+	isAuth: false,
 	token: '',
 	text: '',
 	id: '',
 }
 
 export const authReducer = (state = initialState, action) => {
-	// console.log(action)
 	switch (action.type) {
 		case LOGIN:
 			return {
 				...state,
-				user: {
-					thumbnail: action.payload.thumbnail,
-					fullName: action.payload.fullName,
-					email: action.payload.email,
-					isAuth: true,
-				},
+				user: action.payload,
+				isAuth: true
 			}
 		case CHANGE_TOKEN:
 			return {
@@ -35,12 +26,8 @@ export const authReducer = (state = initialState, action) => {
 		case LOGOUT:
 			return {
 				...state,
-				user: {
-					thumbnail: '',
-					fullName: '',
-					email: '',
-					isAuth: false,
-				},
+				user: null,
+				isAuth: false,
 				token: '',
 				text: '',
 				id: '',
