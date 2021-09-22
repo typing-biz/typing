@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { getRatingRequest } from '../../store/actions'
@@ -25,17 +25,16 @@ const useStyles = makeStyles((theme) =>
 )
 
 function Rating() {
-	// const user = useSelector((state) => state.authReducer.user)
 	const rating = useSelector((state) => state.ratingReducer.rating)
-	const pageIndex = useSelector((state) => state.ratingReducer.pageIndex)
-	const pageSize = useSelector((state) => state.ratingReducer.pageSize)
-	const totalCount = useSelector((state) => state.ratingReducer.totalCount)
+	const all_users_count = useSelector((state) => state.ratingReducer.all_users_count)
+	const [pageIndex, setPageIndex] = useState(1)
 
 	const dispatch = useDispatch()
 	useEffect(() => {
-		dispatch(getRatingRequest({ pageIndex, pageSize }))
+		dispatch(getRatingRequest({ pageIndex }))
 	}, [pageIndex])
 
+	const computeThePageCount = () => Math.ceil(all_users_count / 5)
 	const classes = useStyles()
 	return (
 		<div className='rating-block'>
@@ -88,7 +87,6 @@ function Rating() {
 												alignItems: 'center',
 											}}
 										>
-											{' '}
 											<img
 												src={el.rating.user.thumbnail}
 												style={{
@@ -115,7 +113,7 @@ function Rating() {
 					</div>
 				</div>
 				<div className={classes.root}>
-					<Pagination count={5} />
+					<Pagination count={computeThePageCount()} onClick={(e) => setPageIndex(e.target.innerText)}/>
 				</div>
 			</div>
 		</div>

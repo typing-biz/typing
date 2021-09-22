@@ -1,5 +1,4 @@
 import React from "react";
-import instagram from "../../assets/img/insta-footer.jpg";
 import face from "../../assets/img/face-footer.jpg";
 import github from "../../assets/img/git-footer.jpg";
 import telega from "../../assets/img/telegram-footer.jpg";
@@ -15,14 +14,11 @@ function Footer() {
           <div className="footer-one">
             <span>TezTer | 2021</span>
             <span className="footer-one-title">
-              <a href="#">tezterkg@gmail.com</a>
+              <b>tezterkg@gmail.com</b>
             </span>
           </div>
 
           <div className="footer-two">
-            {/* <a href="https://www.instagram.com/tezter.kg/?hl=ru">
-              <img src={instagram} />
-            </a> */}
             <a href="https://www.facebook.com/">
               {" "}
               <img src={face} />

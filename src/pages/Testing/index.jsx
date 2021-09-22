@@ -114,10 +114,8 @@ function Testing() {
 		<div className='testin-block'>
 			{countdown === 6 && (
 				<Modal
-					onClick={() => {
-						setCountdown(5)
-						// focus()
-					}}
+					onClick={() => setCountdown(5)}
+					title='Вы готовы?'
 				/>
 			)}
 			<div className='container'>
@@ -132,9 +130,10 @@ function Testing() {
 												? wrongStep
 													? '#90EE90'
 													: '#F08080'
-												: 'white' && id < index
-												? '#ffff7a'
-												: 'white',
+													: 'white' &&
+												    id < index
+													? '#ffff7a'
+													: 'white',
 									}}
 									key={id}
 								>
@@ -146,20 +145,6 @@ function Testing() {
 							{countdown > 0 && countdown < 6 && (
 								<Numbers>{countdown}</Numbers>
 							)}
-
-							<div
-								onClick={() => checkRefresh()}
-								style={{
-									width: 30,
-									height: 30,
-									cursor: 'pointer',
-									position: 'absolute',
-									top: -50,
-								}}
-								className='refresh_btn'
-							>
-								<CachedIcon />
-							</div>
 						</div>
 					</div>
 					<textarea
@@ -170,6 +155,20 @@ function Testing() {
 						ref={focusRef}
 						disabled={disabled}
 					></textarea>
+					<div
+								onClick={() => checkRefresh()}
+								style={{
+									width: 30,
+									height: 30,
+									cursor: 'pointer',
+									position: 'relative',
+									top: 150,
+									right: 50,
+									zIndex: 3,
+								}}
+							>
+								<CachedIcon />
+							</div>
 					{finish && (
 						<ModalResult
 							speed={speed}
@@ -178,8 +177,6 @@ function Testing() {
 							}
 						/>
 					)}
-					<h1>{minutes}:</h1>
-					<h1>{seconds}</h1>
 				</div>
 			</div>
 		</div>

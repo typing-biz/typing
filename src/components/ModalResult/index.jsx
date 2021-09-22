@@ -15,7 +15,7 @@ function ModalResult({speed , accuracy}){
                     <h2 style={{padding:10}}>Точность :   {accuracy}%</h2>
 				
 					<Link to="/">
-						<button className='modal__btn' >Ok</button>
+						<button className='modal__button' >Ok</button>
 					</Link>
 				</div>
 			</section>

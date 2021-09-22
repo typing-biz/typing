@@ -3,17 +3,17 @@ import './Numbers.scss'
 
 function Numbers({children}) {
     return (
-        <div class='content'>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
-        <div class='css'>{children}</div>
+        <div className='content'>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
+        <div className='css'>{children}</div>
     </div>
     )
 }
