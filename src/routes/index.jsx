@@ -6,6 +6,8 @@ import SignUp from '../pages/Login'
 import Profile from '../pages/Profile'
 import Testing from '../pages/Testing'
 import Rating from '../pages/Rating'
+import  AboutUs  from '../pages/AboutUs'
+
 
 function Routes() {
 	
@@ -16,6 +18,7 @@ function Routes() {
 				<Route path='/testing' component={Testing} />
 				<Route path='/rating' component={Rating} />
 				<Route path='/signUp' component={SignUp} />
+				<Route path='/aboutUs' component={AboutUs}/>
 				<Route exact path='/' component={Home} />
 				<Route path='*' component={NotFound}/>
 			</Switch>

@@ -48,9 +48,12 @@ function Header() {
                       </a>
                     </li>
                     <li className="drop-item">
-                      <a href="#footer" className="item--2 ">
+                      <Link to="/aboutUs" className="item--2 ">
+                    
                         О нас
-                      </a>
+                   
+                      </Link>
+                      
                     </li>
                     <li
                       className="drop-item"

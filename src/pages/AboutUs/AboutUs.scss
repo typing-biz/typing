@@ -1,0 +1,30 @@
+* {
+  font-family: Comfortaa;
+}
+
+.AboutUs {
+  background-image: url(../../assets/img/rating.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  padding-top: 100px;
+
+  .AboutUs-body {
+    width: 1000px;
+    height: 380px;
+    left: 191px;
+    top: 180px;
+
+    padding: 30px;
+    font-size: x-large;
+    word-spacing: 3px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+  .AboutUs__first {
+    padding-bottom: 30px;
+  }
+  &__title {
+    font-weight: 900;
+  }
+}
