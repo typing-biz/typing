@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/typing/static/css/main.f7c7dae7.chunk.css",
-    "main.js": "/typing/static/js/main.bae494c0.chunk.js",
-    "main.js.map": "/typing/static/js/main.bae494c0.chunk.js.map",
-    "runtime-main.js": "/typing/static/js/runtime-main.737b3309.js",
-    "runtime-main.js.map": "/typing/static/js/runtime-main.737b3309.js.map",
-    "static/js/2.e27392f0.chunk.js": "/typing/static/js/2.e27392f0.chunk.js",
-    "static/js/2.e27392f0.chunk.js.map": "/typing/static/js/2.e27392f0.chunk.js.map",
-    "index.html": "/typing/index.html",
-    "static/css/main.f7c7dae7.chunk.css.map": "/typing/static/css/main.f7c7dae7.chunk.css.map",
-    "static/js/2.e27392f0.chunk.js.LICENSE.txt": "/typing/static/js/2.e27392f0.chunk.js.LICENSE.txt",
-    "static/media/Google - Original.960cccb6.png": "/typing/static/media/Google - Original.960cccb6.png",
-    "static/media/Profile.scss": "/typing/static/media/bg.6ca42703.png",
-    "static/media/Home.scss": "/typing/static/media/home-new.fb34d0ff.png",
-    "static/media/new.78511f1c.png": "/typing/static/media/new.78511f1c.png",
-    "static/media/style.scss": "/typing/static/media/new1.c2a8519f.png",
-    "static/media/AboutUs.scss": "/typing/static/media/rating.568f2639.png"
+    "main.css": "/react-gh-pages/static/css/main.4e9f5177.chunk.css",
+    "main.js": "/react-gh-pages/static/js/main.bae494c0.chunk.js",
+    "main.js.map": "/react-gh-pages/static/js/main.bae494c0.chunk.js.map",
+    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.0e673241.js",
+    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.0e673241.js.map",
+    "static/js/2.489809a0.chunk.js": "/react-gh-pages/static/js/2.489809a0.chunk.js",
+    "static/js/2.489809a0.chunk.js.map": "/react-gh-pages/static/js/2.489809a0.chunk.js.map",
+    "index.html": "/react-gh-pages/index.html",
+    "static/css/main.4e9f5177.chunk.css.map": "/react-gh-pages/static/css/main.4e9f5177.chunk.css.map",
+    "static/js/2.489809a0.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.489809a0.chunk.js.LICENSE.txt",
+    "static/media/Google - Original.960cccb6.png": "/react-gh-pages/static/media/Google - Original.960cccb6.png",
+    "static/media/Profile.scss": "/react-gh-pages/static/media/bg.6ca42703.png",
+    "static/media/Home.scss": "/react-gh-pages/static/media/home-new.fb34d0ff.png",
+    "static/media/new.78511f1c.png": "/react-gh-pages/static/media/new.78511f1c.png",
+    "static/media/style.scss": "/react-gh-pages/static/media/new1.c2a8519f.png",
+    "static/media/AboutUs.scss": "/react-gh-pages/static/media/rating.568f2639.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.737b3309.js",
-    "static/js/2.e27392f0.chunk.js",
-    "static/css/main.f7c7dae7.chunk.css",
+    "static/js/runtime-main.0e673241.js",
+    "static/js/2.489809a0.chunk.js",
+    "static/css/main.4e9f5177.chunk.css",
     "static/js/main.bae494c0.chunk.js"
   ]
 }
